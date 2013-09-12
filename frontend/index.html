@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      	<title>Celebrity Twitter Search</title>
+    	<link rel="stylesheet" href="style.css" type="text/css">
+   		<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	</head>
+
+	<body id="index">
+	 <div class="well" id="wrapper"> <!--  evtl noch "container"-->
+
+	    <h1><center>Celebrity Twitter Search</center></h1>
+	    <div>
+	    <form class="form-search text-center">
+		  <input type="text" class="input-xxlarge">
+		  <button type="submit" class="btn btn-large btn-primary button-custom" href="#"><i class="icon-search icon-white"></i> Search</button>
+		</form>
+		</div>
+
+		<div class="well container">
+
+			<div class="well container" id="detailansicht">
+				<a class="btn btn-danger pull-right" id="close-button" href="#"><i class="icon-remove"></i></a>
+				<h3 id="überschrift">ich bin eine überschrift</h3>
+			</div>
+
+			<ul class="thumbnails text-center" id="schauspieler">
+			    <div class="thumbnail">
+			    <h4>Schauspieler</h4>
+			      <img src="img/schauspieler.png" class="img-rounded">
+			      <p>...</p>
+			    </div>  
+			</ul>
+
+			<ul class="thumbnails text-center"id="sportler">
+			    <div class="thumbnail">
+			      <h4>Sportler</h4>
+			      <img src="img/fussball.png" class="img-rounded">
+			      <p>...</p>
+			    </div>
+			</ul>
+
+			<ul class="thumbnails text-center"id="comedians">
+			    <div class="thumbnail">
+			      <h4>Comedians</h4>
+			      <img src="img/comedy.png" class="img-rounded">
+			      <p>...</p>
+			    </div>
+			</ul>
+
+			<ul class="thumbnails text-center"id="musiker">			  
+			    <div class="thumbnail">
+			      <h4>Musiker</h4>
+			      <img src="img/musik.png" class="img-rounded">
+			      <p>...</p>
+			    </div>			  
+			</ul>
+
+			<ul class="thumbnails text-center"id="mode">
+			    <div class="thumbnail">
+			      <h4>Mode</h4>
+			      <img src="img/fashion.png" class="img-rounded">
+			      <p>...</p>
+			    </div>		  
+			</ul>
+
+			<ul class="thumbnails text-center"id="politiker">  
+			    <div class="thumbnail">
+			      <h4>Politiker</h4>
+			      <img src="img/politik.png" class="img-rounded">
+			      <p>...</p>
+			    </div>			  			  
+			</ul>
+
+			<ul class="thumbnails text-center"id="autoren">
+			    <div class="thumbnail">
+			      <h4>Autoren</h4>
+			      <img src="img/autoren.png" class="img-rounded">
+			      <p>...</p>
+			    </div>			  			  
+			</ul>
+
+			<ul class="thumbnails text-center"id="reality-stars">
+			    <div class="thumbnail">
+			      <h4>Reality-Stars</h4>
+			      <img src="img/reality-stars.png" class="img-rounded">
+			      <p>...</p>
+			    </div>
+			</ul>
+
+			<ul class="thumbnails text-center"id="moderatoren">			  
+			    <div class="thumbnail">
+			      <h4>Moderatoren</h4>
+			      <img src="img/moderatoren.png" class="img-rounded">
+			      <p>...</p>
+			    </div>			  
+			</ul>
+
+		</div>
+
+	 </div>
+
+	 <script src="libs/jquery-1.9.1.min.js"></script>
+	 <script type="text/javascript">
+
+	 $(".thumbnail").on("click", function(){
+	 	$("#detailansicht").fadeIn(300);
+	 	//$("#detailansicht").css("visibility", "visible");
+	 });
+
+	 $("#close-button").on("click", function(){
+	 	$("#detailansicht").fadeOut(300);
+	 	//$("#detailansicht").css("visibility", "hidden");
+	 });
+
+	 </script>
+		
+	</body>
+</html>

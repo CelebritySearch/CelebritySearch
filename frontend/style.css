@@ -1,0 +1,128 @@
+body{
+
+}
+
+#index h1{
+	color: #00ACEE;
+	font-family: Valken;
+	font-size: 45px;
+	font-weight: normal;
+}
+
+#index h3{
+	color: #00ACEE;
+	font-family: Valken;
+	font-size: 25px;
+	text-align: center;
+}
+
+#wrapper{
+	background-color: #A9F5F2
+}
+
+.input-xxlarge {
+	height: 35px !important;
+}
+
+.thumbnails{
+	position: absolute;
+	float: left;
+}
+
+#schauspieler{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 10px;
+	left: 115px;
+}
+
+#sportler{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 10px;
+	left: 370px;
+
+}
+
+#comedians{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 10px;
+	left: 625px;
+}
+
+#musiker{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 240px;
+	left: 115px;
+}
+
+#mode{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 240px;
+	left: 370px;
+}
+
+#politiker{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 240px;
+	left: 625px;
+}
+
+#autoren{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 470px;
+	left: 115px;
+}
+
+#reality-stars{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 470px;
+	left: 370px;
+}
+
+#moderatoren{
+	box-shadow: 7px 7px 3px #A4A4A4;
+	border-radius: 7px;
+	top: 470px;
+	left: 625px;
+}
+
+#detailansicht{
+	background-color: white;
+	position: absolute;
+	top: 7px;
+	left: 95px;
+	width: 708px;
+	height: 643px;
+	z-index: 1;
+	display: none;
+}
+
+.well .container{
+	background-color: rgba(255,255,255,0.6);
+	height: 660px;
+	position: relative;
+	width: 900px;
+}
+
+.thumbnail{
+	cursor: pointer;
+	height: 200px;
+	width: 220px;
+}
+
+#wrapper{
+	background:-moz-linear-gradient(bottom, #00ACEE, white); /* Firefox */
+	background:-webkit-linear-gradient(bottom, #00ACEE, white); /* Safari, Chrome */
+	background:-o-linear-gradient(bottom, #00ACEE, white); /* Opera */
+	background:-ms-linear-gradient(bottom, #00ACEE, white); /* IE */
+	background:linear-gradient(bottom, #00ACEE, white); /* W3C Standard */
+}
+
+

@@ -14,18 +14,22 @@ var twit = new twitter({
 
 client.autoCommit = true;
 
-twit
-	// .verifyCredentials(function(data){
-	// 	console.log(util.inspect(data));
-	// })
-	.getUserTimeline({
+client.add({ "name": "bacon", "id": "rolfcopter", "screenName": "lol", "userName": "roflcopter"}, function(err, obj){
+	if(err){
+		console.log(err);
+	} else {
+		console.log(obj);
+	}
+});
+
+twit.getUserTimeline({
 		screen_name: 'blackcookiejar',
-		count: 10,
+		count: 11,
 		include_rts: 1
 	}, function(data, err){
 		for(var i = 0; i < data.length; i++){
 			var tweet = data[i];
-			client.add({
+			var solrTweetData = {
 				"createdAt": tweet.created_at,
 				"id": tweet.id,
 				"text": tweet.text,
@@ -34,7 +38,9 @@ twit
 				"userId": tweet.user.id,
 				"userName": tweet.user.name,
 				"screenName": tweet.user.screen_name
-			}, function(err, obj){
+			};
+
+			client.add(solrTweetData, function(err, obj){
 				if(err){
 					console.log(err);
 				} else {
@@ -44,10 +50,33 @@ twit
 		}
 	});
 
+
 twit
-	.stream('blackcookiejar', {track: 'nodejs'}, function(stream){
+	.stream('statuses/filter', {follow: [351051971]}, function(stream){
 		stream.on('data', function(data){
-			console.log(data);
+			if(data.retweet_count !== undefined && data.retweet_count !== null){
+				console.log(util.inspect(data));
+
+				var tweet = data;
+				var solrTweetData = {
+					"createdAt": tweet.created_at,
+					"id": tweet.id,
+					"text": tweet.text,
+					"retweet_count": tweet.retweet_count,
+					"favorite_count": tweet.favorite_count,
+					"userId": tweet.user.id,
+					"userName": tweet.user.name,
+					"screenName": tweet.user.screen_name
+				};
+
+				client.add(solrTweetData, function(err, obj){
+					if(err){
+						console.log(err);
+					} else {
+						console.log(obj);
+					}
+				});
+			}
 		});
 	});
 

@@ -125,4 +125,57 @@ body{
 	background:linear-gradient(bottom, #00ACEE, white); /* W3C Standard */
 }
 
+#section-promis{
+	position: absolute;
+}
+
+#celebrity-one{
+	
+	top: 10px;
+	left: 20px;
+
+}
+
+#celebrity-two{
+	left: 260px;
+	top: 10px;
+}
+
+#celebrity-three{
+	left: 500px;
+	top: 10px;
+}
+
+.tweet{
+	border-bottom: 2px solid #00ACEE;
+	height: 140px;
+	position: relative;
+}
+
+.tweet-pic{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	border-radius: 7px;
+	top: 20px;
+	left: 20px;
+}
+
+.tweet-data{
+	position: absolute;
+	top: 20px;
+	left: 150px;
+}
+
+.celebrity-name{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+
+
+
+
 

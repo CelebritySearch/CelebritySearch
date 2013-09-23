@@ -24,6 +24,46 @@
 			<div class="well container" id="detailansicht">
 				<a class="btn btn-danger pull-right" id="close-button" href="#"><i class="icon-remove"></i></a>
 				<h3 id="ueberschrift"></h3>
+
+			    <div class="tabbable"> <!-- Only required for left/right tabs -->
+				    <ul class="nav nav-tabs">
+					    <li id="tab-promis" class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user"></i> Promis</a></li>
+					    <li id="tab-tweets" ><a href="#tab2" data-toggle="tab"><i class="icon-list"></i> Tweets</a></li>
+				    </ul>
+				    <div class="tab-content">
+					    <div id="section-promis" class="tab-pane active" id="tab1">
+					    	<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
+							    <div class="thumbnail" id="celebrity1">
+							    <h4>Promi 1</h4>
+							      <img src="img/schauspieler.png" class="img-rounded">
+							    </div>  
+							</ul>
+
+							<ul class="thumbnails text-center celebrity-section" id="celebrity-two">
+							    <div class="thumbnail" id="celebrity2">
+							    <h4>Promi 2</h4>
+							      <img src="img/schauspieler.png" class="img-rounded">
+							    </div>  
+							</ul>
+
+							<ul class="thumbnails text-center celebrity-section" id="celebrity-three">
+							    <div class="thumbnail" id="celebrity3">
+							    <h4>Promi 3</h4>
+							      <img src="img/schauspieler.png" class="img-rounded">
+							    </div>  
+							</ul>
+					    </div>
+					    <div id="section-tweets" class="tab-pane" id="tab2">
+					    	<div class="tweet" id="section-tweet1">
+					    		<img src="img/schauspieler.png" class="tweet-pic">
+					    		<div class="tweet-data">
+					    			<p class="celebrity-name">Promi Name</p>
+					    			<p class="tweet-text">blbalablabl</p>
+					    		</div>
+					    	</div>
+						</div>
+			    	</div>
+	    		</div>
 			</div>
 
 			<ul class="thumbnails text-center" id="schauspieler">
@@ -123,6 +163,19 @@
 	 	$("#detailansicht").fadeIn(300);
 	 });
 
+	 $("#tab-promis").on("click", function(){
+	 	$("#tab-tweets").removeClass("active");
+	 	$("#section-tweets").removeClass("active");
+	 	$("#tab-promis").addClass("active");
+	 	$("#section-promis").addClass("active");
+	 });
+
+	 $("#tab-tweets").on("click", function(){
+	 	$("#tab-tweets").addClass("active");
+	 	$("#section-tweets").addClass("active");
+	 	$("#tab-promis").removeClass("active");
+	 	$("#section-promis").removeClass("active");
+	 });
 	 </script>
 		
 	</body>

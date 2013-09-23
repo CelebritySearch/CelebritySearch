@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+    	
+      	<title>Celebrity Twitter Search</title>
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="styleAdmin.css" type="text/css">
+   		<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	</head>
+
+	<body id="index">
+	
+		<br>
+	    <h1><center>Admin Console</center></h1>
+	    <br>
+	    <div class="row-fluid">
+	  		<div class="span6 alert alert-success">
+	  			<h2><center>Add Celebrity</center></h2>
+	  			<br>
+	  			<input id="screenname" type="text" placeholder="screenname">
+	  			<br>
+	  			<br>
+
+	  			<h2>Kategorien</h2>
+	  			
+	  			<label class="checkbox"><input id="checkbox-one" type="checkbox" class="cb" value="">Schauspieler</label>
+	  			<label class="checkbox"><input id="checkbox-two" type="checkbox" class="cb" value="">Sportler</label>
+	  			<label class="checkbox"><input id="checkbox-three" type="checkbox" class="cb" value="">Comedians</label>
+	  			<label class="checkbox"><input id="checkbox-four" type="checkbox" class="cb" value="">Musiker</label>
+	  			<label class="checkbox"><input id="checkbox-five" type="checkbox" class="cb" value="">Mode</label>
+	  			<label class="checkbox"><input id="checkbox-six" type="checkbox" class="cb" value="">Politiker</label>
+	  			<label class="checkbox"><input id="checkbox-seven" type="checkbox" class="cb" value="">Autoren</label>
+	  			<label class="checkbox"><input id="checkbox-eight" type="checkbox" class="cb" value="">Reality-Stars</label>
+	  			<label class="checkbox"><input id="checkbox-nine" type="checkbox" class="cb" value="">Moderatoren</label>
+
+	  			<br>
+	  			<br>
+				<button id="add-button" class="btn btn-primary btn-large" type="button">Add</button>
+
+	  		</div>
+
+	  		<div class="span6 alert alert-success">
+	  			<h2><center>Other Stuff</center></h2>
+	  			<h3>Zahl der Tweets vom Server</h3>
+	  			<input id="screenname" type="text" placeholder="Tweetanzahl">
+	  			<br>
+	  			<button id="add-button" class="btn btn-primary btn-large" type="button">Set</button>
+
+
+	  		</div>
+		</div>
+
+
+
+	 <script src="libs/jquery-1.9.1.min.js"></script>
+	 <script type="text/javascript">
+
+	 	categories = new Array();
+
+	 	$("#add-button").on("click", function(){
+	 		//console.log("add clicked", $("#checkbox-one"));
+	 		if($("#screenname").val()!="") {
+
+	 		categories.push($("#screenname").val());
+		
+			if($("#checkbox-one").prop('checked') == true) {
+				console.log("c1");
+				categories.push("Schauspieler");
+			} 
+			if($("#checkbox-two").prop('checked') == true) {
+				console.log("c2");
+				categories.push("Sportler");
+			} 
+			if($("#checkbox-three").prop('checked') == true) {
+				console.log("c3");
+				categories.push("Comedians");
+			} 
+			if($("#checkbox-four").prop('checked') == true) {
+				console.log("c4");
+				categories.push("Musiker");
+			} 
+			if($("#checkbox-five").prop('checked') == true) {
+				console.log("c5");
+				categories.push("Mode");
+			} 
+			if($("#checkbox-six").prop('checked') == true) {
+				console.log("c6");
+				categories.push("Politiker");
+			} 
+			if($("#checkbox-seven").prop('checked') == true) {
+				console.log("c7");
+				categories.push("Autoren");
+			} 
+			if($("#checkbox-eight").prop('checked') == true) {
+				console.log("c8");
+				categories.push("Reality-Stars");
+			} 
+			if($("#checkbox-nine").prop('checked') == true) {
+				console.log("c9");
+				categories.push("Moderatoren");
+			}
+			console.log("array" + categories); 
+	 		}
+	 		
+			
+
+	 	});
+
+
+
+	 </script>
+		
+	</body>
+</html>

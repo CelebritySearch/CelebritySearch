@@ -9126,3 +9126,262 @@ INFO  - 2013-09-19 12:21:04.302; org.apache.solr.core.SolrCore; [collection1] Re
 INFO  - 2013-09-19 12:21:04.325; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[380637712304193540 (1446600836183490560)],commit=} 0 773
 INFO  - 2013-09-19 12:21:13.778; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=*:*&_=1379586073707&wt=json&fq=text:test} hits=4 status=0 QTime=13 
 INFO  - 2013-09-19 12:21:32.510; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=*:*&_=1379586092462&wt=json&fq=text:test&fq=screenName:blackcookiejar} hits=2 status=0 QTime=34 
+INFO  - 2013-09-19 12:36:07.334; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2013-09-19 12:36:07.707; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor D:\Work\ProjectPeacock\project\solr\contexts at interval 0
+INFO  - 2013-09-19 12:36:07.788; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: D:\Work\ProjectPeacock\project\solr\contexts\solr-jetty-context.xml
+INFO  - 2013-09-19 12:36:12.334; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2013-09-19 12:36:12.613; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2013-09-19 12:36:12.752; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2013-09-19 12:36:12.754; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2013-09-19 12:36:12.761; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2013-09-19 12:36:12.912; org.apache.solr.core.ConfigSolr; Loading container configuration from D:\Work\ProjectPeacock\project\solr\solr\solr.xml
+INFO  - 2013-09-19 12:36:13.435; org.apache.solr.core.SolrCoreDiscoverer; Looking for cores in D:\Work\ProjectPeacock\project\solr\solr
+INFO  - 2013-09-19 12:36:13.436; org.apache.solr.core.SolrCoreDiscoverer; Looking for cores in D:\Work\ProjectPeacock\project\solr\solr\bin
+INFO  - 2013-09-19 12:36:13.438; org.apache.solr.core.SolrCoreDiscoverer; Discovered properties file D:\Work\ProjectPeacock\project\solr\solr\collection1\core.properties, adding to cores
+INFO  - 2013-09-19 12:36:13.457; org.apache.solr.core.CoreContainer; New CoreContainer 700553509
+INFO  - 2013-09-19 12:36:13.460; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2013-09-19 12:36:13.502; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2013-09-19 12:36:13.503; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2013-09-19 12:36:13.505; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2013-09-19 12:36:13.506; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2013-09-19 12:36:13.507; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2013-09-19 12:36:13.508; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2013-09-19 12:36:13.509; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2013-09-19 12:36:13.510; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2013-09-19 12:36:13.510; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2013-09-19 12:36:13.527; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2013-09-19 12:36:14.603; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2013-09-19 12:36:14.640; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using instanceDir: D:\Work\ProjectPeacock\project\solr\solr\collection1
+INFO  - 2013-09-19 12:36:14.642; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'D:\Work\ProjectPeacock\project\solr\solr\collection1\'
+INFO  - 2013-09-19 12:36:14.843; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+WARN  - 2013-09-19 12:36:14.846; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/extraction/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\contrib\extraction\lib).
+WARN  - 2013-09-19 12:36:14.857; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\dist).
+WARN  - 2013-09-19 12:36:14.860; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/clustering/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\contrib\clustering\lib).
+WARN  - 2013-09-19 12:36:14.864; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\dist).
+WARN  - 2013-09-19 12:36:14.870; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/langid/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\contrib\langid\lib).
+WARN  - 2013-09-19 12:36:14.874; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\dist).
+WARN  - 2013-09-19 12:36:14.884; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/velocity/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\contrib\velocity\lib).
+WARN  - 2013-09-19 12:36:14.891; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\collection1\..\..\..\dist).
+INFO  - 2013-09-19 12:36:15.053; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2013-09-19 12:36:15.059; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_44
+INFO  - 2013-09-19 12:36:15.221; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-09-19 12:36:15.228; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-09-19 12:36:15.323; org.apache.solr.schema.IndexSchema; [collection1] Schema name=example
+INFO  - 2013-09-19 12:36:16.183; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2013-09-19 12:36:16.449; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-09-19 12:36:16.460; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-09-19 12:36:16.766; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-09-19 12:36:16.775; org.apache.solr.core.SolrCore; [collection1] Opening new SolrCore at D:\Work\ProjectPeacock\project\solr\solr\collection1\, dataDir=D:\Work\ProjectPeacock\project\solr\solr\collection1\data\
+INFO  - 2013-09-19 12:36:16.785; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2013-09-19 12:36:16.791; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2013-09-19 12:36:16.795; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2013-09-19 12:36:16.833; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\collection1\data
+INFO  - 2013-09-19 12:36:16.835; org.apache.solr.core.SolrCore; New index directory detected: old=null new=D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index/
+INFO  - 2013-09-19 12:36:16.838; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index
+INFO  - 2013-09-19 12:36:16.853; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2013-09-19 12:36:16.854; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2013-09-19 12:36:16.855; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2013-09-19 12:36:16.859; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2013-09-19 12:36:16.860; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2013-09-19 12:36:16.966; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2013-09-19 12:36:16.967; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2013-09-19 12:36:16.970; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2013-09-19 12:36:16.971; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2013-09-19 12:36:16.974; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2013-09-19 12:36:16.977; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2013-09-19 12:36:16.979; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2013-09-19 12:36:16.980; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-09-19 12:36:16.981; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-09-19 12:36:16.982; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2013-09-19 12:36:16.982; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2013-09-19 12:36:16.983; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-09-19 12:36:16.983; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-09-19 12:36:16.986; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2013-09-19 12:36:16.990; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2013-09-19 12:36:16.993; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2013-09-19 12:36:17.006; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2013-09-19 12:36:17.007; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.008; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.008; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.009; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.009; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.009; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.010; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.010; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2013-09-19 12:36:17.043; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-09-19 12:36:17.047; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-09-19 12:36:17.048; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-09-19 12:36:17.198; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@50126c8 main
+INFO  - 2013-09-19 12:36:17.254; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2013-09-19 12:36:17.254; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2013-09-19 12:36:17.255; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2013-09-19 12:36:17.264; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2013-09-19 12:36:17.281; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2013-09-19 12:36:17.285; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: D:\Work\ProjectPeacock\project\solr\solr\collection1\conf\elevate.xml
+INFO  - 2013-09-19 12:36:17.369; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2013-09-19 12:36:17.369; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@50126c8 main{StandardDirectoryReader(segments_5p:760 _7i(4.4):C46/6 _7e(4.4):C1 _7j(4.4):C1 _7k(4.4):C1 _7l(4.4):C1 _7m(4.4):C1 _7n(4.4):C1 _7o(4.4):C1 _7p(4.4):C1)}
+INFO  - 2013-09-19 12:36:17.371; org.apache.solr.core.CoreContainer; registering core: collection1
+INFO  - 2013-09-19 12:36:17.403; org.apache.solr.servlet.SolrDispatchFilter; user.dir=D:\Work\ProjectPeacock\project\solr
+INFO  - 2013-09-19 12:36:17.404; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2013-09-19 12:36:17.492; org.apache.solr.core.SolrCore; [collection1] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=3 status=0 QTime=90 
+INFO  - 2013-09-19 12:36:17.498; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2013-09-19 12:36:17.505; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:17.505; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2013-09-19 12:36:17.506; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2013-09-19 12:36:17.506; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@50126c8 main{StandardDirectoryReader(segments_5p:760 _7i(4.4):C46/6 _7e(4.4):C1 _7j(4.4):C1 _7k(4.4):C1 _7l(4.4):C1 _7m(4.4):C1 _7n(4.4):C1 _7o(4.4):C1 _7p(4.4):C1)}
+INFO  - 2013-09-19 12:36:24.106; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5p,generation=205}
+INFO  - 2013-09-19 12:36:24.117; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 205
+INFO  - 2013-09-19 12:36:24.139; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:24.550; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5p,generation=205}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5q,generation=206}
+INFO  - 2013-09-19 12:36:24.558; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 206
+INFO  - 2013-09-19 12:36:24.607; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@4bbed306 main
+INFO  - 2013-09-19 12:36:24.610; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@4bbed306 main{StandardDirectoryReader(segments_5q:768:nrt _7i(4.4):C46/9 _7j(4.4):C1 _7k(4.4):C1 _7l(4.4):C1 _7m(4.4):C1 _7n(4.4):C1 _7o(4.4):C1 _7q(4.4):C1 _7r(4.4):C4)}
+INFO  - 2013-09-19 12:36:24.610; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:24.615; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:24.616; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:24.616; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@4bbed306 main{StandardDirectoryReader(segments_5q:768:nrt _7i(4.4):C46/9 _7j(4.4):C1 _7k(4.4):C1 _7l(4.4):C1 _7m(4.4):C1 _7n(4.4):C1 _7o(4.4):C1 _7q(4.4):C1 _7r(4.4):C4)}
+INFO  - 2013-09-19 12:36:24.629; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[rolfcopter (1446601801355755520)],commit=} 0 620
+INFO  - 2013-09-19 12:36:25.227; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5q,generation=206}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5r,generation=207}
+INFO  - 2013-09-19 12:36:25.249; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 207
+INFO  - 2013-09-19 12:36:25.283; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@3051f774 main
+INFO  - 2013-09-19 12:36:25.286; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@3051f774 main{StandardDirectoryReader(segments_5r:771:nrt _7i(4.4):C46/10 _7j(4.4):C1 _7k(4.4):C1 _7l(4.4):C1 _7m(4.4):C1 _7n(4.4):C1 _7o(4.4):C1 _7q(4.4):C1 _7r(4.4):C4 _7s(4.4):C1)}
+INFO  - 2013-09-19 12:36:25.289; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:25.299; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:25.300; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:25.300; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@3051f774 main{StandardDirectoryReader(segments_5r:771:nrt _7i(4.4):C46/10 _7j(4.4):C1 _7k(4.4):C1 _7l(4.4):C1 _7m(4.4):C1 _7n(4.4):C1 _7o(4.4):C1 _7q(4.4):C1 _7r(4.4):C4 _7s(4.4):C1)}
+INFO  - 2013-09-19 12:36:25.311; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[380637712304193540 (1446601801856974851)],commit=} 0 813
+INFO  - 2013-09-19 12:36:25.736; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5r,generation=207}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5s,generation=208}
+INFO  - 2013-09-19 12:36:25.760; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 208
+INFO  - 2013-09-19 12:36:25.777; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@11f9eee1 main
+INFO  - 2013-09-19 12:36:25.779; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@11f9eee1 main{StandardDirectoryReader(segments_5s:776:nrt _7t(4.4):C48/1 _7u(4.4):C1)}
+INFO  - 2013-09-19 12:36:25.780; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:25.783; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:25.783; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:25.784; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@11f9eee1 main{StandardDirectoryReader(segments_5s:776:nrt _7t(4.4):C48/1 _7u(4.4):C1)}
+INFO  - 2013-09-19 12:36:25.793; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[380626430079402000 (1446601801856974850)],commit=} 0 1296
+INFO  - 2013-09-19 12:36:26.768; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5s,generation=208}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5t,generation=209}
+INFO  - 2013-09-19 12:36:26.777; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 209
+INFO  - 2013-09-19 12:36:26.812; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@3823778e main
+INFO  - 2013-09-19 12:36:26.814; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@3823778e main{StandardDirectoryReader(segments_5t:779:nrt _7t(4.4):C48/2 _7u(4.4):C1 _7v(4.4):C1)}
+INFO  - 2013-09-19 12:36:26.815; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:26.818; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:26.819; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:26.819; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@3823778e main{StandardDirectoryReader(segments_5t:779:nrt _7t(4.4):C48/2 _7u(4.4):C1 _7v(4.4):C1)}
+INFO  - 2013-09-19 12:36:26.825; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[380626595146248200 (1446601801856974848)],commit=} 0 2328
+INFO  - 2013-09-19 12:36:27.416; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5t,generation=209}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5u,generation=210}
+INFO  - 2013-09-19 12:36:27.441; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 210
+INFO  - 2013-09-19 12:36:27.455; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@6064bc38 main
+INFO  - 2013-09-19 12:36:27.458; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@6064bc38 main{StandardDirectoryReader(segments_5u:782:nrt _7t(4.4):C48/3 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1)}
+INFO  - 2013-09-19 12:36:27.466; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:27.458; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:27.467; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@6064bc38 main{StandardDirectoryReader(segments_5u:782:nrt _7t(4.4):C48/3 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1)}
+INFO  - 2013-09-19 12:36:27.468; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:27.475; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[380625376331853800 (1446601801856974849)],commit=} 0 2978
+INFO  - 2013-09-19 12:36:28.202; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5u,generation=210}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5v,generation=211}
+INFO  - 2013-09-19 12:36:28.227; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 211
+INFO  - 2013-09-19 12:36:28.243; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@54e84814 main
+INFO  - 2013-09-19 12:36:28.247; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@54e84814 main{StandardDirectoryReader(segments_5v:785:nrt _7t(4.4):C48/4 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1)}
+INFO  - 2013-09-19 12:36:28.248; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:28.256; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:28.258; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:28.259; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@54e84814 main{StandardDirectoryReader(segments_5v:785:nrt _7t(4.4):C48/4 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1)}
+INFO  - 2013-09-19 12:36:28.268; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[378092639045701600 (1446601802009018368)],commit=} 0 3626
+INFO  - 2013-09-19 12:36:28.684; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5v,generation=211}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5w,generation=212}
+INFO  - 2013-09-19 12:36:28.708; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 212
+INFO  - 2013-09-19 12:36:28.724; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@649b2de5 main
+INFO  - 2013-09-19 12:36:28.729; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@649b2de5 main{StandardDirectoryReader(segments_5w:788:nrt _7t(4.4):C48/5 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1)}
+INFO  - 2013-09-19 12:36:28.730; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:28.741; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:28.742; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:28.743; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@649b2de5 main{StandardDirectoryReader(segments_5w:788:nrt _7t(4.4):C48/5 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1)}
+INFO  - 2013-09-19 12:36:28.752; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[369866617489879040 (1446601802717855744)],commit=} 0 3434
+INFO  - 2013-09-19 12:36:29.338; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5w,generation=212}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5x,generation=213}
+INFO  - 2013-09-19 12:36:29.357; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 213
+INFO  - 2013-09-19 12:36:29.366; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@70762635 main
+INFO  - 2013-09-19 12:36:29.367; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@70762635 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:29.368; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:29.373; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:29.374; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:29.375; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@70762635 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:29.382; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[365775844611862500 (1446601803224317952)],commit=} 0 3581
+INFO  - 2013-09-19 12:36:29.924; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5x,generation=213}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5y,generation=214}
+INFO  - 2013-09-19 12:36:29.953; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 214
+INFO  - 2013-09-19 12:36:29.956; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@54c6c62e main
+INFO  - 2013-09-19 12:36:29.959; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@54c6c62e main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:29.959; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:29.970; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:29.971; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:29.972; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@54c6c62e main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:29.975; org.apache.solr.update.DirectUpdateHandler2; No uncommitted changes. Skipping IW.commit.
+INFO  - 2013-09-19 12:36:29.987; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[365764837889941500 (1446601804303302656)],commit=} 0 3156
+INFO  - 2013-09-19 12:36:29.988; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@ee37f08 main
+INFO  - 2013-09-19 12:36:29.994; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:29.994; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@ee37f08 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:29.995; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:30.002; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:30.004; org.apache.solr.update.DirectUpdateHandler2; No uncommitted changes. Skipping IW.commit.
+INFO  - 2013-09-19 12:36:30.005; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@ee37f08 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:30.015; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[365759517314650100 (1446601804988022784)],commit=} 0 2532
+INFO  - 2013-09-19 12:36:30.015; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@52280a68 main
+INFO  - 2013-09-19 12:36:30.022; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:30.023; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@52280a68 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:30.023; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:30.032; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:30.034; org.apache.solr.update.DirectUpdateHandler2; No uncommitted changes. Skipping IW.commit.
+INFO  - 2013-09-19 12:36:30.035; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@52280a68 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:30.047; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[365633266381889540 (1446601805817446400)],commit=} 0 1772
+INFO  - 2013-09-19 12:36:30.047; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@395a9e26 main
+INFO  - 2013-09-19 12:36:30.071; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:30.073; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@395a9e26 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:30.108; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:30.108; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@395a9e26 main{StandardDirectoryReader(segments_5x:791:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1)}
+INFO  - 2013-09-19 12:36:30.120; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[365523608115752960 (1446601806323908608)],commit=} 0 1363
+INFO  - 2013-09-19 12:36:51.122; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2013-09-19 12:36:51.551; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5y,generation=214}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@46a2e975; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5z,generation=215}
+INFO  - 2013-09-19 12:36:51.578; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 215
+INFO  - 2013-09-19 12:36:51.588; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@5574ad8c main
+INFO  - 2013-09-19 12:36:51.591; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@5574ad8c main{StandardDirectoryReader(segments_5z:793:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1 _80(4.4):C1)}
+INFO  - 2013-09-19 12:36:51.605; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-09-19 12:36:51.592; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2013-09-19 12:36:51.606; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@5574ad8c main{StandardDirectoryReader(segments_5z:793:nrt _7t(4.4):C48/6 _7u(4.4):C1 _7v(4.4):C1 _7w(4.4):C1 _7x(4.4):C1 _7y(4.4):C1 _7z(4.4):C1 _80(4.4):C1)}
+INFO  - 2013-09-19 12:36:51.621; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update/json params={commit=true&wt=json} {add=[380641686671478800 (1446601829771116544)],commit=} 0 502
+INFO  - 2013-09-19 12:36:58.695; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1379587018681&wt=json} status=0 QTime=1 
+INFO  - 2013-09-19 12:36:58.923; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={_=1379587018715&wt=json} status=0 QTime=146 
+INFO  - 2013-09-19 12:37:21.180; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=*:*&_=1379587041149&wt=json&fq=screenName:blackcookiejar&fq=text:yet} hits=1 status=0 QTime=15 
+INFO  - 2013-09-22 10:37:53.893; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2013-09-22 10:37:57.335; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/D:/Work/ProjectPeacock/project/solr/solr-webapp/webapp/},D:\Work\ProjectPeacock\project\solr/webapps/solr.war
+INFO  - 2013-09-22 10:38:00.753; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=700553509
+INFO  - 2013-09-22 10:38:02.225; org.apache.solr.core.SolrCore; [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@60df0244
+INFO  - 2013-09-22 10:38:02.554; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=13,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=13,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+INFO  - 2013-09-22 10:38:04.305; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2013-09-22 10:38:04.370; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2013-09-22 10:38:04.371; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2013-09-22 10:38:09.003; org.apache.solr.core.SolrCore; [collection1] Closing main searcher on request.
+INFO  - 2013-09-22 10:38:09.236; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2013-09-22 10:38:09.375; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index;done=false>>]
+INFO  - 2013-09-22 10:38:09.387; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\collection1\data\index
+INFO  - 2013-09-22 10:38:09.388; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\collection1\data [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\collection1\data;done=false>>]
+INFO  - 2013-09-22 10:38:09.416; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\collection1\data
+INFO  - 2013-09-22 10:38:11.047; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/D:/Work/ProjectPeacock/project/solr/solr-webapp/webapp/},D:\Work\ProjectPeacock\project\solr/webapps/solr.war
+WARN  - 2013-09-22 10:38:12.575; org.eclipse.jetty.util.thread.QueuedThreadPool; 3 threads could not be stopped

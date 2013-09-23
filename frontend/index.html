@@ -23,14 +23,14 @@
 
 			<div class="well container" id="detailansicht">
 				<a class="btn btn-danger pull-right" id="close-button" href="#"><i class="icon-remove"></i></a>
-				<h3 id="überschrift">Hier kommt der Titel hin</h3>
+				<h3 id="ueberschrift">Hier kommt der Titel hin</h3>
 			</div>
 
 			<ul class="thumbnails text-center" id="schauspieler">
 			    <div class="thumbnail" id="Schauspieler">
 			    <h4>Schauspieler</h4>
 			      <img src="img/schauspieler.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? Evtl. Untertitel ?</p>
 			    </div>  
 			</ul>
 
@@ -38,7 +38,7 @@
 			    <div class="thumbnail" id="Sportler">
 			      <h4>Sportler</h4>
 			      <img src="img/fussball.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>
 			</ul>
 
@@ -46,7 +46,7 @@
 			    <div class="thumbnail" id="Comedians">
 			      <h4>Comedians</h4>
 			      <img src="img/comedy.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>
 			</ul>
 
@@ -54,7 +54,7 @@
 			    <div class="thumbnail" id="Musiker">
 			      <h4>Musiker</h4>
 			      <img src="img/musik.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>			  
 			</ul>
 
@@ -62,7 +62,7 @@
 			    <div class="thumbnail" id="Mode">
 			      <h4>Mode</h4>
 			      <img src="img/fashion.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>		  
 			</ul>
 
@@ -70,7 +70,7 @@
 			    <div class="thumbnail" id="Politiker">
 			      <h4>Politiker</h4>
 			      <img src="img/politik.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>			  			  
 			</ul>
 
@@ -78,7 +78,7 @@
 			    <div class="thumbnail" id="Autoren">
 			      <h4>Autoren</h4>
 			      <img src="img/autoren.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>			  			  
 			</ul>
 
@@ -86,7 +86,7 @@
 			    <div class="thumbnail" id="Reality-stars">
 			      <h4>Reality-Stars</h4>
 			      <img src="img/reality-stars.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>
 			</ul>
 
@@ -94,11 +94,12 @@
 			    <div class="thumbnail" id="Moderatoren">
 			      <h4>Moderatoren</h4>
 			      <img src="img/moderatoren.png" class="img-rounded">
-			      <p>?evtl untertitel?</p>
+			      <p>? - ?</p>
 			    </div>			  
 			</ul>
 
 		</div>
+	
 
 	 </div>
 
@@ -110,6 +111,8 @@
 	 	var newTitle = $(this).attr("id");
 	 	document.getElementById("überschrift").innerHTML = newTitle;
 	 	//$("#detailansicht").css("visibility", "visible");
+	 	$("#ueberschrift").text("hallo?");
+
 	 });
 
 	 $("#close-button").on("click", function(){

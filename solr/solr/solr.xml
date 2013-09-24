@@ -42,4 +42,15 @@
     <int name="connTimeout">${connTimeout:0}</int>
   </shardHandlerFactory>
 
+  <solr persistent="true" sharedLib="lib">
+    <cores adminPath="/admin/cores">
+      <core name="tweets" instanceDir="/solrdata/tweets">
+        <property name="dataDir" value="/solrdata/tweets/data" />
+      </core>
+      <core name="celebrities" instanceDir="/solrdata/celebrities">
+        <property name="dataDir" value="/solrdata/celebrities/data" />
+      </core>
+    </cores>
+  </solr>
+
 </solr>

@@ -115,6 +115,7 @@
    <field name="verified" type="boolean" indexed="true" stored="true"/>
    <field name="friends_count" type="int" indexed="true" stored="true"/>
    <field name="statuses_count" type="int" indexed="true" stored="true"/>
+   <field name="followers_count" type="int" indexed="true" stored="true"/>
    
    <field name="categories" type="string" multiValued="true" indexed="true" stored="true" />   
 

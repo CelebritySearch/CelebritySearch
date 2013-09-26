@@ -23,13 +23,14 @@ app.use(express.static(__dirname + '../../frontend'));
 
 
 app.get("/addCeleb", function(req, res){
-	var screen_name = req.screen_name;
-	var categories = res.categories;
+	var screen_name = req.query.screen_name;
+	var categories = req.query.categories;
 
 	twit.showUser(screen_name, function(data, err){
 		if(err){
 			console.log(err);
 		} else {
+			console.log(util.inspect(data));
 			var celeb = {
 				"name": data.name,
 				"screen_name": data.screen_name,
@@ -45,25 +46,35 @@ app.get("/addCeleb", function(req, res){
 				"friends_count": data.friends_count,
 				"statuses_count": data.statuses_count,
 				"url": data.url,
+				"followers_count": data.followers_count,
 				"categories": categories
 			}
 
-			console.log(utils.inspect(celeb));
+			console.log(util.inspect(celeb));
 
-			/*
 			celebClient.add(celeb, function(err, obj){
 				if(err){
 					console.log(err);
 				} else {
 					console.log(obj);
 				}
-			}) */
+			});
 		}
 	})	
 });
 
 app.get("/celebs", function(req, res){
-	// get celebs for a category from solr server
+	var category = req.query.category;
+
+	var query = celebClient.createQuery().q({ categories : category});
+	celebClient.search(query, function(err, obj){
+		if(err){
+			console.log(err);
+		} else {
+			console.log(obj);
+			res.send(obj);
+		}
+	});
 });
 
 app.get("/categoryTweets", function(req, res){

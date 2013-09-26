@@ -55,53 +55,63 @@
 
 	 <script src="libs/jquery-1.9.1.min.js"></script>
 	 <script type="text/javascript">
+	 	var url = "http://localhost:1337";
 
-	 	categories = new Array();
 
 	 	$("#add-button").on("click", function(){
+	 		var categories = new Array();
+	 		var screen_name = null;
 	 		//console.log("add clicked", $("#checkbox-one"));
 	 		if($("#screenname").val()!="") {
 
-	 		categories.push($("#screenname").val());
+	 			screen_name = $('#screenname').val();
 		
-			if($("#checkbox-one").prop('checked') == true) {
-				console.log("c1");
-				categories.push("Schauspieler");
-			} 
-			if($("#checkbox-two").prop('checked') == true) {
-				console.log("c2");
-				categories.push("Sportler");
-			} 
-			if($("#checkbox-three").prop('checked') == true) {
-				console.log("c3");
-				categories.push("Comedians");
-			} 
-			if($("#checkbox-four").prop('checked') == true) {
-				console.log("c4");
-				categories.push("Musiker");
-			} 
-			if($("#checkbox-five").prop('checked') == true) {
-				console.log("c5");
-				categories.push("Mode");
-			} 
-			if($("#checkbox-six").prop('checked') == true) {
-				console.log("c6");
-				categories.push("Politiker");
-			} 
-			if($("#checkbox-seven").prop('checked') == true) {
-				console.log("c7");
-				categories.push("Autoren");
-			} 
-			if($("#checkbox-eight").prop('checked') == true) {
-				console.log("c8");
-				categories.push("Reality-Stars");
-			} 
-			if($("#checkbox-nine").prop('checked') == true) {
-				console.log("c9");
-				categories.push("Moderatoren");
-			}
-			console.log("array" + categories); 
-			$.get("/addCeleb","localhost:1337", {"data[]":["categories[0]", "categories[1]"]});
+				if($("#checkbox-one").prop('checked') == true) {
+					console.log("c1");
+					categories.push("Schauspieler");
+				} 
+				if($("#checkbox-two").prop('checked') == true) {
+					console.log("c2");
+					categories.push("Sportler");
+				} 
+				if($("#checkbox-three").prop('checked') == true) {
+					console.log("c3");
+					categories.push("Comedians");
+				} 
+				if($("#checkbox-four").prop('checked') == true) {
+					console.log("c4");
+					categories.push("Musiker");
+				} 
+				if($("#checkbox-five").prop('checked') == true) {
+					console.log("c5");
+					categories.push("Mode");
+				} 
+				if($("#checkbox-six").prop('checked') == true) {
+					console.log("c6");
+					categories.push("Politiker");
+				} 
+				if($("#checkbox-seven").prop('checked') == true) {
+					console.log("c7");
+					categories.push("Autoren");
+				} 
+				if($("#checkbox-eight").prop('checked') == true) {
+					console.log("c8");
+					categories.push("Reality-Stars");
+				} 
+				if($("#checkbox-nine").prop('checked') == true) {
+					console.log("c9");
+					categories.push("Moderatoren");
+				}
+				console.log(categories); 
+				
+				if(screen_name && (categories.length > 0)){
+					$.get(url + "/addCeleb", {
+						"categories[]": categories,
+						"screen_name": screen_name
+					});	
+				} else {
+					throw new Error('Screen name not specified or categories missing');
+				}
 	 		}
 	 		
 			

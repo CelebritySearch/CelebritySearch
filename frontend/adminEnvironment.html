@@ -101,6 +101,7 @@
 				categories.push("Moderatoren");
 			}
 			console.log("array" + categories); 
+			$.get("/addCeleb","localhost:1337", {"data[]":["categories[0]", "categories[1]"]});
 	 		}
 	 		
 			
@@ -108,7 +109,7 @@
 	 	});
 
 
-
+//localhost1337
 	 </script>
 		
 	</body>

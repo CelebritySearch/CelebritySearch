@@ -1,9 +1,10 @@
 var express = require('express'),
 	app = express(),
-	server = require('http').createServer(app),
+	http = require('http'),
+	server = http.createServer(app),
+	io = require('socket.io').listen(server),
 	util = require('util'),
 	twitter = require('twitter'),
-	io = require('socket.io').listen(server),
 	solr = require('solr-client');
 
 var celebClient = solr.createClient("127.0.0.1", "8983", "celebrities");
@@ -20,7 +21,7 @@ celebClient.autoCommit = true;
 
 // open stream, that serve the data to the solr server
 app.use(express.static(__dirname + '../../frontend'));
-
+server.listen(1337);
 
 app.get("/addCeleb", function(req, res){
 	var screen_name = req.query.screen_name;
@@ -63,28 +64,68 @@ app.get("/addCeleb", function(req, res){
 	})	
 });
 
-app.get("/celebs", function(req, res){
-	var category = req.query.category;
+app.get("/celeb", function(req, res){
+	if(req.query.category){
+		var category = req.query.category;
+		var query = celebClient.createQuery().q({ categories : category});
+	} else if(req.query.screen_name){
+		var screen_name = req.query.screen_name;
+		var query = celebClient.createQuery().q({ screen_name : screen_name });
+	}
 
-	var query = celebClient.createQuery().q({ categories : category});
 	celebClient.search(query, function(err, obj){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(obj);
-			res.send(obj);
+			res.send(obj.response);
 		}
 	});
 });
 
-app.get("/categoryTweets", function(req, res){
-
+app.get("/tweetViews", function(req, res){
+	var tweetIds = req.query.tweetIds;
+	var length = tweetIds.length;
+	for(var i = 0; i < length; i++){
+		twit.get('/statuses/oembed.format', { id: tweetIds[i] }, function(data){
+			console.log(data);
+		});
+	}
 });
 
-app.get("/celebTweets", function(req, res){
+app.get("/tweets", function(req, res){
+	if(req.query.category){
+		var category = req.query.category;
+		var query = tweetClient.createQuery().q({ categories: category });
 
+	} else if(req.query.screen_name){
+		if(req.query.screen_name.constructor == Array){
+			var screen_names = req.query.screen_name;
+			var querystring = '';
+			for(var i = 0; i < screen_names.length; i++){
+				if(i > 0){
+					querystring = querystring+ " OR ";
+				}
+
+				querystring = querystring+ "screen_name:" + screen_names[i];
+			}
+			console.log(querystring);
+
+			var query = tweetClient.createQuery().q(querystring).rows(20);
+		} else {
+			var screen_name = req.query.screen_name;
+			var query = tweetClient.createQuery().q({ screen_name: screen_name });
+		}
+		
+		tweetClient.search(query, function(err, obj){
+			if(err){
+				console.log(err);
+			} else {
+				console.log(util.inspect(obj));
+				res.send(obj.response);
+			}
+		});
+	}
 });
-
 
 io.sockets.on('connection', function(socket){
 	socket.emit('news', { hello: 'world' });
@@ -94,13 +135,43 @@ io.sockets.on('connection', function(socket){
 	});
 
 	socket.on('celebStream', function(data){
+		var celebIds = [];
+		if(data.celebId.constructor == Array){
+			var length = data.celebIds.length;
+			for(var i = 0; i < length; i++){
+				celebIds.push(parseInt(data.celebIds[i]));
+			}
+		} else {
+			celebIds.push(parseInt(data.celebId));
+		}
+		// TODO getCelebrities
 
+		twit.stream('statuses/filter', {follow: celebIds}, function(stream){
+			stream.on('data', function(data){
+				if (data.retweet_count !== undefined && data.retweet_count !== null) {
+					var tweet = data;
+					
+					var solrTweetData = {
+						"createdAt": tweet.created_at,
+						"id": tweet.id,
+						"text": tweet.text,
+						"retweet_count": tweet.retweet_count,
+						"favorite_count": tweet.favorite_count,
+						"userId": tweet.user.id,
+						"userName": tweet.user.name,
+						"screenName": tweet.user.screen_name
+					};
+
+					socket.emit('tweet', solrTweetData);					
+				};
+			})
+		})
 	});
 });
  
-/*
+
 twit.getUserTimeline({
-		screen_name: 'blackcookiejar',
+		screen_name: 'JohnMayer',
 		count: 11,
 		include_rts: 1
 	}, function(data, err){
@@ -114,7 +185,8 @@ twit.getUserTimeline({
 				"favorite_count": tweet.favorite_count,
 				"user_id": tweet.user.id,
 				"user_name": tweet.user.name,
-				"screen_name": tweet.user.screen_name
+				"screen_name": tweet.user.screen_name,
+				"profile_image_url": tweet.user.profile_image_url
 			};
 
 			tweetClient.add(solrTweetData, function(err, obj){
@@ -125,8 +197,9 @@ twit.getUserTimeline({
 				}
 			});
 		}
-	}); 
+	});
 
+/*
 twit
 	.stream('statuses/filter', {follow: [351051971]}, function(stream){
 		stream.on('data', function(data){
@@ -155,5 +228,3 @@ twit
 			}
 		});
 	}); */
-
-server.listen(1337);

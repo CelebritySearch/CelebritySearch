@@ -54,13 +54,14 @@
 							</ul>
 					    </div>
 					    <div id="section-tweets" class="tab-pane" id="tab2">
+					    <!-- 
 					    	<div class="tweet" id="section-tweet1">
 					    		<img src="img/schauspieler.png" class="tweet-pic">
 					    		<div class="tweet-data">
 					    			<p class="celebrity-name">Promi Name</p>
 					    			<p class="tweet-text">blbalablabl</p>
 					    		</div>
-					    	</div>
+					    	</div> -->
 						</div>
 			    	</div>
 	    		</div>
@@ -140,43 +141,96 @@
 		</div>
 	
 
-	 </div>
+	</div>
 
-	 <script src="libs/jquery-1.9.1.min.js"></script>
-	 <script type="text/javascript">
-
-	 $(".thumbnail").on("click", function(){
+	<script src="libs/jquery-1.9.1.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+	var category = '';
+	$(".thumbnail").on("click", function(event){
 	 	$("#detailansicht").fadeIn(300);
-	 	var newTitle = $(this).attr("id");
-	 	document.getElementById("ueberschrift").innerHTML = newTitle;
+	 	category = $(this).attr("id");
+	 	document.getElementById("ueberschrift").innerHTML = category;
 	 	//$("#detailansicht").css("visibility", "visible");
+	});
 
-
-	 });
-
-	 $("#close-button").on("click", function(){
+	$("#close-button").on("click", function(){
 	 	$("#detailansicht").fadeOut(300);
 	 	//$("#detailansicht").css("visibility", "hidden");
-	 });
+	});
 
-	 $("#search-button").on("click", function(){
+	$("#search-button").on("click", function(){
 	 	$("#detailansicht").fadeIn(300);
-	 });
+	});
 
-	 $("#tab-promis").on("click", function(){
+	$("#tab-promis").on("click", function(){
 	 	$("#tab-tweets").removeClass("active");
 	 	$("#section-tweets").removeClass("active");
 	 	$("#tab-promis").addClass("active");
 	 	$("#section-promis").addClass("active");
-	 });
-
-	 $("#tab-tweets").on("click", function(){
+	});
+ 	
+ 	$("#tab-tweets").on("click", function(){
 	 	$("#tab-tweets").addClass("active");
 	 	$("#section-tweets").addClass("active");
+	 	fillTweetView(category);
 	 	$("#tab-promis").removeClass("active");
 	 	$("#section-promis").removeClass("active");
-	 });
-	 </script>
+	});
+
+	function fillTweetView(category){
+		var screen_names = [];
+		$.get('/celeb', {category: category}, function(data){
+			var docs = data.docs;
+			var length = docs.length;
+			for(var i = 0; i < length; i++){
+				screen_names.push(docs[i].screen_name);
+			}
+
+			$.get('/tweets', { screen_name: screen_names}, function(data){
+				var tweets = data.docs;
+				var length = tweets.length;
+				var $tweetSection = $('#section-tweets');
+
+				for(var i = 0; i <length; i++){
+					$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
+				}
+				
+				// $.get('/tweetViews', { tweetIds: tweetIds }, function(data){
+				// 	console.log(data);
+				// });
+			});
+		});
+	};
+
+	
+	function createTweetView(name, text, profile_image_url){
+		var view = $('<div class="tweet" id="section-tweet1"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
+		$(view.find('.tweet-pic')[0]).attr("src", profile_image_url);
+		$(view.find('.celebrity-name')[0]).text(name);
+		$(view.find('.tweet-text')[0]).text(text);
+
+		return view;
+	};
+
+ 	var socket = io.connect('http://localhost');
+
+ 	socket.on('tweet', function(tweet){
+ 		console.log(tweet);
+ 	});
+
+ 	function openCelebStream(screen_name){
+ 		$.get('/celeb', { screen_name: screen_name }, function(data){
+ 			var docs = data.response.docs;
+ 			if(docs.length > 0){
+				var celebId = parseInt(docs[0].id);
+				socket.emit('celebStream', { celebId: celebId });
+ 			} else {
+ 				throw new Error("Celebrity with screen_name: " + screen_name + " not found.");
+ 			}
+ 		});
+ 	}
+	</script>
 		
 	</body>
 </html>

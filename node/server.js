@@ -1,6 +1,7 @@
 var express = require('express'),
 	app = express(),
 	http = require('http'),
+	twitterClass = require('./twitter.js'),
 	server = http.createServer(app),
 	io = require('socket.io').listen(server),
 	util = require('util'),
@@ -13,8 +14,10 @@ var twit = new twitter({
 	consumer_key: 'qU9BHvWtKrLFKITu0bgA',
 	consumer_secret: '7YVdmU8NGJTSABNjMfaigx8N25Ls5zH1suuWfwGNDY',
 	access_token_key: '351051971-X0ShaGSHzNK1CIA2p3BeZp7nUNkd9C2JQIJdSpkZ',
-	access_token_secret: 'F40rRpM9vXQTMpCySuTRyrxIC7oU7EubL0jXy65fcos' 
+	access_token_secret: 'F40rRpM9vXQTMpCySuTRyrxIC7oU7EubL0jXy65fcos'
 });
+
+twitterClass.getCeleb("bacon");
 
 tweetClient.autoCommit = true;
 celebClient.autoCommit = true;
@@ -89,6 +92,44 @@ app.get("/tweetViews", function(req, res){
 		twit.get('/statuses/oembed.format', { id: tweetIds[i] }, function(data){
 			console.log(data);
 		});
+	}
+});
+
+app.get("/categoryTweets", function(req, res){
+	var category = null;
+
+	if(req.query.category.constructor == Array){
+
+	} else {
+		var category = req.query.category;
+		var celebQuery = celebClient.createQuery().q( { categories: category } );
+
+		celebClient.search(celebQuery, function(err, obj){
+			if(err){
+				console.log(err);
+			} else {
+				var docs = obj.response.docs;
+				var length = docs.length;
+
+				var querystring = '';
+				for(var i = 0; i < length; i++){
+					if(i > 0){
+						querystring = querystring+ " OR ";
+					}
+
+					querystring = querystring+ "screen_name:" + docs[i].screen_name;
+				}
+				var query = tweetClient.createQuery().q(querystring).rows(20);
+
+				tweetClient.search(query, function(err, obj){
+					if(err){
+						console.log(err);
+					} else {
+						res.send(obj.response);
+					}
+				})
+			}
+		})
 	}
 });
 
@@ -168,36 +209,6 @@ io.sockets.on('connection', function(socket){
 		})
 	});
 });
- 
-
-twit.getUserTimeline({
-		screen_name: 'JohnMayer',
-		count: 11,
-		include_rts: 1
-	}, function(data, err){
-		for(var i = 0; i < data.length; i++){
-			var tweet = data[i];
-			var solrTweetData = {
-				"created_at": tweet.created_at,
-				"id": tweet.id,
-				"text": tweet.text,
-				"retweet_count": tweet.retweet_count,
-				"favorite_count": tweet.favorite_count,
-				"user_id": tweet.user.id,
-				"user_name": tweet.user.name,
-				"screen_name": tweet.user.screen_name,
-				"profile_image_url": tweet.user.profile_image_url
-			};
-
-			tweetClient.add(solrTweetData, function(err, obj){
-				if(err){
-					console.log(err);
-				} else {
-					console.log(obj);
-				}
-			});
-		}
-	});
 
 /*
 twit

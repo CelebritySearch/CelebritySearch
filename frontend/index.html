@@ -173,7 +173,8 @@
  	$("#tab-tweets").on("click", function(){
 	 	$("#tab-tweets").addClass("active");
 	 	$("#section-tweets").addClass("active");
-	 	fillTweetView(category);
+	 	testCategoryTweets(category);
+	 	// fillTweetView(category);
 	 	$("#tab-promis").removeClass("active");
 	 	$("#section-promis").removeClass("active");
 	});
@@ -203,6 +204,21 @@
 		});
 	};
 
+	function testCategoryTweets(category){
+		var $tweetSection = $('#section-tweets');
+		$tweetSection.empty();
+
+		$.get('/categoryTweets', { category: category }, function(data){
+			console.log(data);
+
+			var tweets = data.docs;
+			var length = tweets.length;
+
+			for(var i = 0; i <length; i++){
+				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
+			}
+		});
+	};
 	
 	function createTweetView(name, text, profile_image_url){
 		var view = $('<div class="tweet" id="section-tweet1"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');

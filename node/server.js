@@ -2,6 +2,7 @@ var express = require('express'),
 	app = express(),
 	http = require('http'),
 	twitterClass = require('./twitter.js'),
+	celebs = require('./celeb.js'),
 	server = http.createServer(app),
 	io = require('socket.io').listen(server),
 	util = require('util'),
@@ -17,7 +18,7 @@ var twit = new twitter({
 	access_token_secret: 'F40rRpM9vXQTMpCySuTRyrxIC7oU7EubL0jXy65fcos'
 });
 
-twitterClass.getCeleb("bacon");
+//celebs.addCelebsFromFile(__dirname + '../../frontend/listen.txt');
 
 tweetClient.autoCommit = true;
 celebClient.autoCommit = true;
@@ -102,12 +103,13 @@ app.get("/categoryTweets", function(req, res){
 
 	} else {
 		var category = req.query.category;
-		var celebQuery = celebClient.createQuery().q( { categories: category } );
+		var celebQuery = celebClient.createQuery().q( { categories: category } ).rows(40);
 
 		celebClient.search(celebQuery, function(err, obj){
 			if(err){
 				console.log(err);
 			} else {
+				console.log(util.inspect(obj.response.docs));
 				var docs = obj.response.docs;
 				var length = docs.length;
 
@@ -119,12 +121,14 @@ app.get("/categoryTweets", function(req, res){
 
 					querystring = querystring+ "screen_name:" + docs[i].screen_name;
 				}
-				var query = tweetClient.createQuery().q(querystring).rows(20);
+				console.log(querystring);
+				var tweetsQuery = tweetClient.createQuery().q(querystring).rows(40);
 
-				tweetClient.search(query, function(err, obj){
+				tweetClient.search(tweetsQuery, function(err, obj){
 					if(err){
 						console.log(err);
 					} else {
+						console.log(util.inspect(obj.response.docs));
 						res.send(obj.response);
 					}
 				})
@@ -209,6 +213,63 @@ io.sockets.on('connection', function(socket){
 		})
 	});
 });
+
+twit
+	.getUserTimeline({screen_name: 'zachbraff', count: 10, include_rts: 1}, function(_data, err){
+		console.log("getting data");
+		console.log(_data.length);
+		for(var i = 0; i < _data.length; i++){
+			var data = _data[i];
+			var tweet = {
+				created_at: data.created_at,
+				id: data.id_str,
+				retweet_count: data.retweet_count,
+				favorite_count: data.favorite_count,
+				user_id: data.user.id_str,
+				user_name: data.user.name,
+				screen_name: data.user.screen_name,
+				profile_image_url: data.user.profile_image_url,
+				text: data.text
+			};
+			console.log("adding tweets");
+
+			tweetClient.add(tweet, function(err, res){
+				if(err){
+					console.log(err);
+				} else {
+					console.log(res);
+				}
+			});
+		}
+	});
+
+	twit.getUserTimeline({
+			screen_name: 'blackcookiejar',
+			count: 11,
+			include_rts: 1
+		}, function(data, err){
+			for(var i = 0; i < data.length; i++){
+				var tweet = data[i];
+				var solrTweetData = {
+					"created_at": tweet.created_at,
+					"id": tweet.id,
+					"text": tweet.text,
+					"retweet_count": tweet.retweet_count,
+					"favorite_count": tweet.favorite_count,
+					"user_id": tweet.user.id,
+					"user_name": tweet.user.name,
+					"screen_name": tweet.user.screen_name
+				};
+
+				tweetClient.add(solrTweetData, function(err, obj){
+					if(err){
+						console.log(err);
+					} else {
+						console.log(obj);
+					}
+				});
+			}
+		});
 
 /*
 twit

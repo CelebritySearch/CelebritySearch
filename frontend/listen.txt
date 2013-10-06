@@ -33,6 +33,6 @@ Reality-Stars
 	[Kim Kardeshian, KimKardashian], [Khloé Kardashian, KhloeKardashian], [Kourtney Kardashian, KourtneyKardash], [Nicole Polizzi, snooki], [JWOWW, JENNIWOWW], [Mike Sorrentino, ItsTheSituation], [Pauly D, DJPaulyD], [Georgina Fleur, georgina], [Charlotte Letitia Crosby, CharlotteGShore], [Gary "Gaz" Beadle, GazGShore], [Vicky Pattison, VickyGShore], [Holly Hagan, HollyGShore], [Scott Timlin, ScottGShore], [James Tindale, JamesGShore], [Sophie Kasaei, SophieKasaei_]
 
 autoren
-	[E.L. James, E_L_James], [J.K. Rowling, jk_rowling], [Neil Gaiman, neilhimself], [Joanne Harris, joannechocolat], [Ian Rankin, beathigh], [Paulo Coelho, paulocoelho], [Jackie Collins, jackiecollins], [Nicholas Sparks, NicholasSparks], [Salman Rushdie , salmanrushdie]
+	[E.L. James, E_L_James], [J.K. Rowling, jk_rowling], [Neil Gaiman, neilhimself], [Joanne Harris, joannechocolat], [Ian Rankin, beathigh], [Paulo Coelho, paulocoelho], [Jackie Collins, jackiecollins], [Nicholas Sparks, NicholasSparks], [Salman Rushdie , salmanrushdie], [Terry Pratchett, terryandrob]
 
 

@@ -32,26 +32,33 @@
 				    </ul>
 				    <div class="tab-content">
 					    <div id="section-promis" class="tab-pane active" id="tab1">
-					    	<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
-							    <div class="thumbnail" id="celebrity1">
-							    <h4>Promi 1</h4>
-							      <img src="img/schauspieler.png" class="img-rounded">
-							    </div>  
-							</ul>
+					    	<div class="row-fluid">
+						    	<div class="span4">
+						    		<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
+								    <div class="thumbnail" id="celebrity1">
+								    <h4>Promi 1</h4>
+								    <img src="img/schauspieler.png" class="img-rounded">
+								    </div>  
+									</ul>
+								</div>
 
-							<ul class="thumbnails text-center celebrity-section" id="celebrity-two">
-							    <div class="thumbnail" id="celebrity2">
-							    <h4>Promi 2</h4>
-							      <img src="img/schauspieler.png" class="img-rounded">
-							    </div>  
-							</ul>
-
-							<ul class="thumbnails text-center celebrity-section" id="celebrity-three">
-							    <div class="thumbnail" id="celebrity3">
-							    <h4>Promi 3</h4>
-							      <img src="img/schauspieler.png" class="img-rounded">
-							    </div>  
-							</ul>
+								<div class="span4">
+									<ul class="thumbnails text-center celebrity-section" id="celebrity-two">
+									    <div class="thumbnail" id="celebrity2">
+									    <h4>Promi 2</h4>
+									    <img src="img/schauspieler.png" class="img-rounded">
+									    </div>  
+									</ul>
+								</div>
+								<div class="span4">
+									<ul class="thumbnails text-center celebrity-section" id="celebrity-three">
+									    <div class="thumbnail" id="celebrity3">
+									    <h4>Promi 3</h4>
+									    <img src="img/schauspieler.png" class="img-rounded">
+									    </div>  
+									</ul>
+								</div>
+							</div>
 					    </div>
 					    <div id="section-tweets" class="tab-pane" id="tab2">
 					    <!-- 
@@ -64,7 +71,7 @@
 					    	</div> -->
 						</div>
 			    	</div>
-	    		</div>
+	    		</div>	
 			</div>
 
 			<ul class="thumbnails text-center" id="schauspieler">
@@ -140,8 +147,75 @@
 
 		</div>
 	
+	<ul class="nav nav-tabs nav-stacked well" id="facetted-search">
+	  	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchauspieler"> Schauspieler
+	    	</label>
+	    	</a>
+     	</li>
+	  	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSportler"> Sportler
+	    	</label>
+	    	</a>
+     	</li>
+	  	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionComedians"> Comedians
+	    	</label>
+	    	</a>
+     	</li>
+     	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionMusiker"> Musiker
+	    	</label>
+	    	</a>
+     	</li>
+     	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionMode"> Mode
+	    	</label>
+	    	</a>
+     	</li>
+     	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionPolitiker"> Politiker
+	    	</label>
+	    	</a>
+     	</li>
+     	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchriftsteller"> Schriftsteller
+	    	</label>
+	    	</a>
+     	</li>
+     	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionReality-Stars"> Reality-Stars
+	    	</label>
+	    	</a>
+     	</li>
+     	<li>
+		  	<a href="#">
+		  	<label class="checkbox">
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionModeratoren"> Moderatoren
+	    	</label>
+	    	</a>
+     	</li>
+	</ul>
 
 	</div>
+
+	
 
 	<script src="libs/jquery-1.9.1.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
@@ -151,11 +225,17 @@
 	 	$("#detailansicht").fadeIn(300);
 	 	category = $(this).attr("id");
 	 	document.getElementById("ueberschrift").innerHTML = category;
+	 	$("#facetted-search").fadeIn(300);
+	 	console.log("clicked", category);
+	 	$(".optionsFacettedSearch").prop("checked", false);
+	 	$("#option" + category).prop("checked", true);
 	 	//$("#detailansicht").css("visibility", "visible");
 	});
 
 	$("#close-button").on("click", function(){
+
 	 	$("#detailansicht").fadeOut(300);
+	 	$("#facetted-search").fadeOut(300);
 	 	//$("#detailansicht").css("visibility", "hidden");
 	});
 

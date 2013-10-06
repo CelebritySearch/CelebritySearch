@@ -32,7 +32,7 @@
 				    </ul>
 				    <div class="tab-content">
 					    <div id="section-promis" class="tab-pane active" id="tab1">
-					    	<div class="row-fluid">
+					    	<div class="row-fluid" id="promi-section">
 						    	<!--<div class="span4">
 						    		<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
 								    <div class="thumbnail" id="celebrity1">
@@ -213,8 +213,11 @@
 	<script type="text/javascript">
 	var category = '';
 	$(".thumbnail").on("click", function(event){
-	 	$("#detailansicht").fadeIn(300);
 	 	category = $(this).attr("id");
+		fillPromiSection(category);
+		testCategoryTweets(category);
+
+	 	$("#detailansicht").fadeIn(300);
 	 	document.getElementById("ueberschrift").innerHTML = category;
 	 	$("#facetted-search").fadeIn(300);
 	 	console.log("clicked", category);
@@ -237,6 +240,7 @@
 	$("#tab-promis").on("click", function(){
 	 	$("#tab-tweets").removeClass("active");
 	 	$("#section-tweets").removeClass("active");
+	 	fillPromiSection(category);
 	 	$("#tab-promis").addClass("active");
 	 	$("#section-promis").addClass("active");
 	});
@@ -251,23 +255,15 @@
 	});
 
 	$(".checkbox").on("click", function(event){
-		
-
 		var categories = [];
-
-			var checkboxEls = $("#facetted-search").find(".checkbox");
-			for(var i = 0; i<checkboxEls.length; i++){
-				var checkbox = $(checkboxEls[i]).find(".optionsFacettedSearch");
-
-					if($(checkbox).prop("checked") == true){
-					categories.push(($(checkboxEls[i]).text().replace(/[\n|\s|\r|\t]*/,"")));
-					
-				
-				}
-				
+		var checkboxEls = $("#facetted-search").find(".checkbox");
+		for(var i = 0; i<checkboxEls.length; i++){
+			var checkbox = $(checkboxEls[i]).find(".optionsFacettedSearch");
+				if($(checkbox).prop("checked") == true){
+				categories.push(($(checkboxEls[i]).text().replace(/[\n|\s|\r|\t]*/,"")));
 			}
-			testCategoryTweets(categories);
-
+		}
+		testCategoryTweets(categories);
 	});
 
 	function testCategoryTweets(category){
@@ -300,12 +296,13 @@
 		return view;
 	};
 
-	function getPromiData(category){
-		var $promiSection = $("promi-section");
+	function fillPromiSection(category){
+		var $promiSection = $("#promi-section");
 		$promiSection.empty();
 
 		$.get('/celeb', {category: category}, function(celebs){
 			var length = celebs.length;
+			console.log(celebs);
 
 			for(var i = 0; i<length; i++){
 				$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));

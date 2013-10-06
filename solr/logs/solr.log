@@ -5436,3 +5436,240 @@ INFO  - 2013-10-06 13:41:06.320; org.apache.solr.handler.component.SpellCheckCom
 INFO  - 2013-10-06 13:41:06.321; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
 INFO  - 2013-10-06 13:41:06.322; org.apache.solr.core.SolrCore; [tweets] Registered new searcher Searcher@2906b654 main{StandardDirectoryReader(segments_9t:1383 _8d(4.4):C50/11 _er(4.4):C17/4 _da(4.4):C12/3 _ci(4.4):C2 _f8(4.4):C13/3 _cw(4.4):C1 _cy(4.4):C2 _d0(4.4):C2 _de(4.4):C1 _f9(4.4):C1 _fb(4.4):C1 _fd(4.4):C1 _ff(4.4):C1 _fh(4.4):C1)}
 INFO  - 2013-10-06 13:41:06.335; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2013-10-06 14:43:15.774; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2013-10-06 14:43:15.776; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/D:/Work/ProjectPeacock/project/solr/solr-webapp/webapp/},D:\Work\ProjectPeacock\project\solr/webapps/solr.war
+INFO  - 2013-10-06 14:43:16.784; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=232369406
+INFO  - 2013-10-06 14:43:16.785; org.apache.solr.core.SolrCore; [celebrities]  CLOSING SolrCore org.apache.solr.core.SolrCore@49757d61
+INFO  - 2013-10-06 14:43:16.787; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+INFO  - 2013-10-06 14:43:16.807; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2013-10-06 14:43:16.808; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2013-10-06 14:43:16.809; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2013-10-06 14:43:16.813; org.apache.solr.core.SolrCore; [celebrities] Closing main searcher on request.
+INFO  - 2013-10-06 14:43:16.824; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2013-10-06 14:43:16.858; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\celebrities\data [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\celebrities\data;done=false>>]
+INFO  - 2013-10-06 14:43:16.866; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\celebrities\data
+INFO  - 2013-10-06 14:43:16.867; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index;done=false>>]
+INFO  - 2013-10-06 14:43:16.871; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index
+INFO  - 2013-10-06 14:43:16.874; org.apache.solr.core.SolrCore; [tweets]  CLOSING SolrCore org.apache.solr.core.SolrCore@3c6dee0f
+INFO  - 2013-10-06 14:43:16.875; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+INFO  - 2013-10-06 14:43:16.890; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2013-10-06 14:43:16.890; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2013-10-06 14:43:16.891; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2013-10-06 14:43:16.893; org.apache.solr.core.SolrCore; [tweets] Closing main searcher on request.
+INFO  - 2013-10-06 14:43:16.903; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2013-10-06 14:43:16.908; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\tweets\data [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\tweets\data;done=false>>]
+INFO  - 2013-10-06 14:43:16.912; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\tweets\data
+INFO  - 2013-10-06 14:43:16.912; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index;done=false>>]
+INFO  - 2013-10-06 14:43:16.918; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index
+INFO  - 2013-10-06 14:43:16.921; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/D:/Work/ProjectPeacock/project/solr/solr-webapp/webapp/},D:\Work\ProjectPeacock\project\solr/webapps/solr.war
+INFO  - 2013-10-06 14:43:26.799; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2013-10-06 14:43:26.836; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor D:\Work\ProjectPeacock\project\solr\contexts at interval 0
+INFO  - 2013-10-06 14:43:26.846; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: D:\Work\ProjectPeacock\project\solr\contexts\solr-jetty-context.xml
+INFO  - 2013-10-06 14:43:28.293; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2013-10-06 14:43:28.356; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2013-10-06 14:43:28.390; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2013-10-06 14:43:28.391; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2013-10-06 14:43:28.393; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2013-10-06 14:43:28.521; org.apache.solr.core.ConfigSolr; Loading container configuration from D:\Work\ProjectPeacock\project\solr\solr\solr.xml
+INFO  - 2013-10-06 14:43:28.654; org.apache.solr.core.SolrCoreDiscoverer; Looking for cores in D:\Work\ProjectPeacock\project\solr\solr
+INFO  - 2013-10-06 14:43:28.655; org.apache.solr.core.SolrCoreDiscoverer; Looking for cores in D:\Work\ProjectPeacock\project\solr\solr\bin
+INFO  - 2013-10-06 14:43:28.656; org.apache.solr.core.SolrCoreDiscoverer; Discovered properties file D:\Work\ProjectPeacock\project\solr\solr\celebrities\core.properties, adding to cores
+INFO  - 2013-10-06 14:43:28.659; org.apache.solr.core.SolrCoreDiscoverer; Discovered properties file D:\Work\ProjectPeacock\project\solr\solr\tweets\core.properties, adding to cores
+INFO  - 2013-10-06 14:43:28.666; org.apache.solr.core.CoreContainer; New CoreContainer 2055489140
+INFO  - 2013-10-06 14:43:28.668; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2013-10-06 14:43:28.688; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2013-10-06 14:43:28.690; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2013-10-06 14:43:28.691; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2013-10-06 14:43:28.691; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2013-10-06 14:43:28.691; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2013-10-06 14:43:28.692; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2013-10-06 14:43:28.693; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2013-10-06 14:43:28.694; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2013-10-06 14:43:28.694; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2013-10-06 14:43:28.714; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2013-10-06 14:43:28.883; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2013-10-06 14:43:28.910; org.apache.solr.core.CoreContainer; Creating SolrCore 'tweets' using instanceDir: D:\Work\ProjectPeacock\project\solr\solr\tweets
+INFO  - 2013-10-06 14:43:28.910; org.apache.solr.core.CoreContainer; Creating SolrCore 'celebrities' using instanceDir: D:\Work\ProjectPeacock\project\solr\solr\celebrities
+INFO  - 2013-10-06 14:43:28.911; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'D:\Work\ProjectPeacock\project\solr\solr\tweets\'
+INFO  - 2013-10-06 14:43:28.912; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'D:\Work\ProjectPeacock\project\solr\solr\celebrities\'
+INFO  - 2013-10-06 14:43:29.024; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2013-10-06 14:43:29.024; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+WARN  - 2013-10-06 14:43:29.025; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/extraction/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\extraction\lib).
+WARN  - 2013-10-06 14:43:29.025; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/extraction/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\extraction\lib).
+WARN  - 2013-10-06 14:43:29.030; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.033; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.036; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/clustering/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\clustering\lib).
+WARN  - 2013-10-06 14:43:29.039; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/clustering/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\clustering\lib).
+WARN  - 2013-10-06 14:43:29.042; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.047; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.050; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/langid/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\langid\lib).
+WARN  - 2013-10-06 14:43:29.054; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/langid/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\langid\lib).
+WARN  - 2013-10-06 14:43:29.057; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.061; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.065; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/velocity/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\velocity\lib).
+WARN  - 2013-10-06 14:43:29.068; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/velocity/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\velocity\lib).
+WARN  - 2013-10-06 14:43:29.077; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 14:43:29.081; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+INFO  - 2013-10-06 14:43:29.250; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2013-10-06 14:43:29.253; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2013-10-06 14:43:29.263; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_44
+INFO  - 2013-10-06 14:43:29.267; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_44
+INFO  - 2013-10-06 14:43:29.402; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-10-06 14:43:29.402; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-10-06 14:43:29.410; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-10-06 14:43:29.410; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-10-06 14:43:29.508; org.apache.solr.schema.IndexSchema; [tweets] Schema name=example
+INFO  - 2013-10-06 14:43:29.513; org.apache.solr.schema.IndexSchema; [celebrities] Schema name=example
+INFO  - 2013-10-06 14:43:30.358; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2013-10-06 14:43:30.358; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2013-10-06 14:43:30.446; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 14:43:30.446; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 14:43:30.455; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 14:43:30.456; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 14:43:30.648; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-10-06 14:43:30.648; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-10-06 14:43:30.663; org.apache.solr.core.SolrCore; [tweets] Opening new SolrCore at D:\Work\ProjectPeacock\project\solr\solr\tweets\, dataDir=D:\Work\ProjectPeacock\project\solr\solr\tweets\data\
+INFO  - 2013-10-06 14:43:30.663; org.apache.solr.core.SolrCore; [celebrities] Opening new SolrCore at D:\Work\ProjectPeacock\project\solr\solr\celebrities\, dataDir=D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\
+INFO  - 2013-10-06 14:43:30.668; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2013-10-06 14:43:30.672; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2013-10-06 14:43:30.683; org.apache.solr.core.SolrCore; [celebrities] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2013-10-06 14:43:30.683; org.apache.solr.core.SolrCore; [tweets] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2013-10-06 14:43:30.686; org.apache.solr.core.SolrCore; [tweets] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2013-10-06 14:43:30.685; org.apache.solr.core.SolrCore; [celebrities] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2013-10-06 14:43:30.719; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\celebrities\data
+INFO  - 2013-10-06 14:43:30.719; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\tweets\data
+INFO  - 2013-10-06 14:43:30.720; org.apache.solr.core.SolrCore; New index directory detected: old=null new=D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index/
+INFO  - 2013-10-06 14:43:30.721; org.apache.solr.core.SolrCore; New index directory detected: old=null new=D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index/
+INFO  - 2013-10-06 14:43:30.722; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index
+INFO  - 2013-10-06 14:43:30.723; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index
+INFO  - 2013-10-06 14:43:30.741; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2013-10-06 14:43:30.741; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2013-10-06 14:43:30.741; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2013-10-06 14:43:30.742; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2013-10-06 14:43:30.743; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2013-10-06 14:43:30.744; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2013-10-06 14:43:30.752; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2013-10-06 14:43:30.752; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2013-10-06 14:43:30.753; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2013-10-06 14:43:30.753; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2013-10-06 14:43:30.877; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.877; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.878; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.878; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.882; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2013-10-06 14:43:30.882; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2013-10-06 14:43:30.883; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.883; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.888; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2013-10-06 14:43:30.888; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2013-10-06 14:43:30.892; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2013-10-06 14:43:30.892; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2013-10-06 14:43:30.896; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2013-10-06 14:43:30.896; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2013-10-06 14:43:30.897; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 14:43:30.897; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 14:43:30.898; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 14:43:30.898; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 14:43:30.901; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.901; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.902; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.902; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.903; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.903; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.903; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.904; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 14:43:30.909; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2013-10-06 14:43:30.909; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2013-10-06 14:43:30.915; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2013-10-06 14:43:30.915; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2013-10-06 14:43:30.920; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2013-10-06 14:43:30.920; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2013-10-06 14:43:30.936; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2013-10-06 14:43:30.936; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2013-10-06 14:43:30.936; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.937; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.937; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.937; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.938; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.938; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.939; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.939; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.940; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.940; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.941; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.941; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.941; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.942; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.944; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.944; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2013-10-06 14:43:30.969; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 14:43:30.969; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 14:43:30.975; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 14:43:30.975; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 14:43:30.979; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 14:43:30.979; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 14:43:31.068; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@62e1ae2c main
+INFO  - 2013-10-06 14:43:31.091; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@4ce00d09 main
+INFO  - 2013-10-06 14:43:31.108; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2013-10-06 14:43:31.108; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2013-10-06 14:43:31.108; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2013-10-06 14:43:31.109; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2013-10-06 14:43:31.109; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2013-10-06 14:43:31.110; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2013-10-06 14:43:31.121; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2013-10-06 14:43:31.121; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2013-10-06 14:43:31.136; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2013-10-06 14:43:31.138; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2013-10-06 14:43:31.140; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: D:\Work\ProjectPeacock\project\solr\solr\tweets\conf\elevate.xml
+INFO  - 2013-10-06 14:43:31.140; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: D:\Work\ProjectPeacock\project\solr\solr\celebrities\conf\elevate.xml
+INFO  - 2013-10-06 14:43:31.203; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2013-10-06 14:43:31.203; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2013-10-06 14:43:31.204; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@4ce00d09 main{StandardDirectoryReader(segments_9t:1383 _8d(4.4):C50/11 _er(4.4):C17/4 _da(4.4):C12/3 _ci(4.4):C2 _f8(4.4):C13/3 _cw(4.4):C1 _cy(4.4):C2 _d0(4.4):C2 _de(4.4):C1 _f9(4.4):C1 _fb(4.4):C1 _fd(4.4):C1 _ff(4.4):C1 _fh(4.4):C1)}
+INFO  - 2013-10-06 14:43:31.205; org.apache.solr.core.CoreContainer; registering core: celebrities
+INFO  - 2013-10-06 14:43:31.205; org.apache.solr.core.CoreContainer; registering core: tweets
+INFO  - 2013-10-06 14:43:31.204; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@62e1ae2c main{StandardDirectoryReader(segments_ev:1372 _er(4.4):C236/7 _es(4.4):C1 _et(4.4):C1 _eu(4.4):C1 _ev(4.4):C1 _ew(4.4):C1 _ex(4.4):C1 _ey(4.4):C1)}
+INFO  - 2013-10-06 14:43:31.215; org.apache.solr.servlet.SolrDispatchFilter; user.dir=D:\Work\ProjectPeacock\project\solr
+INFO  - 2013-10-06 14:43:31.219; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2013-10-06 14:43:31.265; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2013-10-06 14:43:31.291; org.apache.solr.core.SolrCore; [celebrities] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=72 
+INFO  - 2013-10-06 14:43:31.294; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-10-06 14:43:31.295; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2013-10-06 14:43:31.295; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2013-10-06 14:43:31.295; org.apache.solr.core.SolrCore; [tweets] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=14 status=0 QTime=82 
+INFO  - 2013-10-06 14:43:31.295; org.apache.solr.core.SolrCore; [celebrities] Registered new searcher Searcher@62e1ae2c main{StandardDirectoryReader(segments_ev:1372 _er(4.4):C236/7 _es(4.4):C1 _et(4.4):C1 _eu(4.4):C1 _ev(4.4):C1 _ew(4.4):C1 _ex(4.4):C1 _ey(4.4):C1)}
+INFO  - 2013-10-06 14:43:31.305; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-10-06 14:43:31.305; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2013-10-06 14:43:31.306; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2013-10-06 14:43:31.306; org.apache.solr.core.SolrCore; [tweets] Registered new searcher Searcher@4ce00d09 main{StandardDirectoryReader(segments_9t:1383 _8d(4.4):C50/11 _er(4.4):C17/4 _da(4.4):C12/3 _ci(4.4):C2 _f8(4.4):C13/3 _cw(4.4):C1 _cy(4.4):C2 _d0(4.4):C2 _de(4.4):C1 _f9(4.4):C1 _fb(4.4):C1 _fd(4.4):C1 _ff(4.4):C1 _fh(4.4):C1)}
+INFO  - 2013-10-06 14:43:59.104; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=3 
+INFO  - 2013-10-06 14:43:59.151; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=15 
+INFO  - 2013-10-06 14:47:58.520; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:27.043; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=1 
+INFO  - 2013-10-06 14:49:27.044; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:27.062; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=2 
+INFO  - 2013-10-06 14:49:30.707; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=1 
+INFO  - 2013-10-06 14:49:30.726; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=6 
+INFO  - 2013-10-06 14:49:31.807; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=1 
+INFO  - 2013-10-06 14:49:32.425; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:32.436; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=2 
+INFO  - 2013-10-06 14:49:32.955; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:35.741; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:35.754; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=2 
+INFO  - 2013-10-06 14:49:36.470; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:49.847; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:49:49.861; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=1 
+INFO  - 2013-10-06 14:50:00.708; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:50:25.939; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler+OR+categories:Comedians&wt=json&rows=20} hits=96 status=0 QTime=2 
+INFO  - 2013-10-06 14:50:25.970; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:JimCarrey+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:JerrySeinfeld+OR+screen_name:rustyrockets+OR+screen_name:SteveMartinToGo+OR+screen_name:eddiemurphy+OR+screen_name:JonahHill+OR+screen_name:BillCosby+OR+screen_name:jayleno+OR+screen_name:chrisrock+OR+screen_name:ConanOBrien+OR+screen_name:AnnaKFaris+OR+screen_name:damitdasklaas+OR+screen_name:oliverpocher+OR+screen_name:Joan_Rivers+OR+screen_name:mariobarth+OR+screen_name:jimmyfallon+OR+screen_name:PalinaRojinski&wt=json} hits=13 status=0 QTime=11 
+INFO  - 2013-10-06 14:50:28.023; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=1 
+INFO  - 2013-10-06 14:50:28.032; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=1 
+INFO  - 2013-10-06 14:50:28.781; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler+OR+categories:Sportler&wt=json&rows=20} hits=96 status=0 QTime=2 
+INFO  - 2013-10-06 14:50:28.812; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:undefined+OR+screen_name:Schwarzenegger+OR+screen_name:serenawilliams+OR+screen_name:Podolski10+OR+screen_name:BSchweinsteiger+OR+screen_name:Venuseswilliams+OR+screen_name:LewisHamilton+OR+screen_name:MarioGoetze+OR+screen_name:lancearmstrong+OR+screen_name:swish41+OR+screen_name:KingJames+OR+screen_name:alo_oficial+OR+screen_name:SHAQ+OR+screen_name:kobebryant+OR+screen_name:TheBorisBecker+OR+screen_name:JB17Official+OR+screen_name:Cristiano+OR+screen_name:Klitschko+OR+screen_name:FinallyMario+OR+screen_name:Manuel_Neuer&wt=json} hits=0 status=0 QTime=11 
+INFO  - 2013-10-06 14:50:29.431; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=1 
+INFO  - 2013-10-06 14:50:29.439; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=1 
+INFO  - 2013-10-06 14:50:30.574; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler+OR+categories:Musiker&wt=json&rows=20} hits=127 status=0 QTime=2 
+INFO  - 2013-10-06 14:50:30.601; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:jtimberlake+OR+screen_name:selenagomez+OR+screen_name:MileyCyrus+OR+screen_name:JohnMayer+OR+screen_name:justinbieber+OR+screen_name:britneyspears+OR+screen_name:ddlovato+OR+screen_name:adamlevine+OR+screen_name:50cent+OR+screen_name:OfficialAdele+OR+screen_name:xtina+OR+screen_name:NellyFurtado+OR+screen_name:enrique305+OR+screen_name:Eminem+OR+screen_name:cher+OR+screen_name:rihanna+OR+screen_name:celinedion+OR+screen_name:Beyonce+OR+screen_name:MariahCarey&wt=json} hits=35 status=0 QTime=12 
+INFO  - 2013-10-06 14:50:31.100; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=0 
+INFO  - 2013-10-06 14:50:31.111; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=1 
+INFO  - 2013-10-06 14:51:04.229; org.apache.solr.core.SolrCore; [celebrities] webapp=/solr path=/select params={q=categories:Schauspieler&wt=json&rows=20} hits=78 status=0 QTime=1 
+INFO  - 2013-10-06 14:51:04.243; org.apache.solr.core.SolrCore; [tweets] webapp=/solr path=/select params={q=screen_name:blackcookiejar+OR+screen_name:undefined+OR+screen_name:JimCarrey+OR+screen_name:RedHourBen+OR+screen_name:EmWatson+OR+screen_name:BryanCranston+OR+screen_name:KevinJames+OR+screen_name:AdamSandler+OR+screen_name:ChloeBennet4+OR+screen_name:RyanGosling+OR+screen_name:BenAffleck+OR+screen_name:jtimberlake+OR+screen_name:JerrySeinfeld+OR+screen_name:VanessaHudgens+OR+screen_name:ashleytisdale+OR+screen_name:zachbraff+OR+screen_name:lenadunham+OR+screen_name:SteveCarell+OR+screen_name:donald_faison+OR+screen_name:ZacEfron&wt=json} hits=23 status=0 QTime=1 

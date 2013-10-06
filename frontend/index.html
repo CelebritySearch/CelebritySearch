@@ -32,7 +32,7 @@
 				    </ul>
 				    <div class="tab-content">
 					    <div id="section-promis" class="tab-pane active" id="tab1">
-					    	<div class="row-fluid" id="promi-section">
+					    	<div class="row" id="promi-section">
 						    	<!--<div class="span4">
 						    		<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
 								    <div class="thumbnail" id="celebrity1">
@@ -75,14 +75,14 @@
 			</div>
 
 			<ul class="thumbnails text-center" id="schauspieler">
-			    <div class="thumbnail" id="Schauspieler">
+			    <div class="thumbnail category-thumbnail" id="Schauspieler">
 			    <h4>Schauspieler</h4>
 			      <img src="img/schauspieler.png" class="img-rounded">
 			    </div>  
 			</ul>
 
 			<ul class="thumbnails text-center"id="sportler">
-			    <div class="thumbnail" id="Sportler">
+			    <div class="thumbnail category-thumbnail" id="Sportler">
 			      <h4>Sportler</h4>
 			      <img src="img/fussball.png" class="img-rounded">
 			      
@@ -90,7 +90,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="comedians">
-			    <div class="thumbnail" id="Comedians">
+			    <div class="thumbnail category-thumbnail" id="Comedians">
 			      <h4>Comedians</h4>
 			      <img src="img/comedy.png" class="img-rounded">
 			      
@@ -98,7 +98,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="musiker">			  
-			    <div class="thumbnail" id="Musiker">
+			    <div class="thumbnail category-thumbnail" id="Musiker">
 			      <h4>Musiker</h4>
 			      <img src="img/musik.png" class="img-rounded">
 			      
@@ -106,7 +106,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="mode">
-			    <div class="thumbnail" id="Mode">
+			    <div class="thumbnail category-thumbnail" id="Mode">
 			      <h4>Mode</h4>
 			      <img src="img/fashion.png" class="img-rounded">
 			      
@@ -114,7 +114,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="politiker">  
-			    <div class="thumbnail" id="Politiker">
+			    <div class="thumbnail category-thumbnail" id="Politiker">
 			      <h4>Politiker</h4>
 			      <img src="img/politik.png" class="img-rounded">
 			      
@@ -122,7 +122,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="autoren">
-			    <div class="thumbnail" id="Autoren">
+			    <div class="thumbnail category-thumbnail" id="Autoren">
 			      <h4>Autoren</h4>
 			      <img src="img/autoren.png" class="img-rounded">
 			      
@@ -130,7 +130,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="reality-stars">
-			    <div class="thumbnail" id="Reality-stars">
+			    <div class="thumbnail category-thumbnail" id="Reality-Stars">
 			      <h4>Reality-Stars</h4>
 			      <img src="img/reality-stars.png" class="img-rounded">
 			      
@@ -138,7 +138,7 @@
 			</ul>
 
 			<ul class="thumbnails text-center"id="moderatoren">			  
-			    <div class="thumbnail" id="Moderatoren">
+			    <div class="thumbnail category-thumbnail" id="Moderatoren">
 			      <h4>Moderatoren</h4>
 			      <img src="img/moderatoren.png" class="img-rounded">
 			      
@@ -212,7 +212,7 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript">
 	var category = '';
-	$(".thumbnail").on("click", function(event){
+	$(".category-thumbnail").on("click", function(event){
 	 	category = $(this).attr("id");
 		fillPromiSection(category);
 		testCategoryTweets(category);
@@ -264,6 +264,14 @@
 			}
 		}
 		testCategoryTweets(categories);
+		fillPromiSection(categories);
+		if(categories.length == 1){
+			document.getElementById("ueberschrift").innerHTML = categories[0];
+		}
+		else{
+			document.getElementById("ueberschrift").innerHTML = "Kategorisierte Suche";	
+		}
+		
 	});
 
 	function testCategoryTweets(category){
@@ -289,9 +297,9 @@
 	};
 
 	function createPromiView(name, profile_image_url){
-		var view = $('<div class="span4"><ul class="thumbnails text-center celebrity-section"><div class="thumbnail" id="celebrity1"><h4 class="celebrity-name">Promi 1</h4><img src="img/schauspieler.png" class="img-rounded promi-pic" ></div></ul></div>');
+		var view = $('<div class="span4"><ul class="thumbnails text-center celebrity-section"><div class="thumbnail celebrity-thumbnail"><h4 class="promi-name">Promi 1</h4><img src="img/schauspieler.png" class="img-rounded promi-pic" ></div></ul></div>');
 		$(view.find('.promi-pic')[0]).attr("src", profile_image_url);
-		$(view.find('.celebrity-name')[0]).text(name);
+		$(view.find('.promi-name')[0]).text(name);
 
 		return view;
 	};
@@ -302,12 +310,52 @@
 
 		$.get('/celeb', {category: category}, function(celebs){
 			var length = celebs.length;
-			console.log(celebs);
 
+			var numPromis = 0;
 			for(var i = 0; i<length; i++){
 				$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));
+				numPromis++;
+			}
+			
+			if(numPromis == 20){
+
+				var buttonMore = createButtonMore();
+				$promiSection.append(buttonMore);
+
+				$(buttonMore).on("click", function(){
+					createMorePromiViews(category, numPromis, $promiSection);	
+				});
+
 			}
 		});
+	};
+
+	function createMorePromiViews(category, numPromis, $promiSection){
+			deleteButtonMore();
+			$.get('/celeb', {category: category, start: numPromis}, function(celebs){
+				var length = celebs.length;
+
+				for(var i = 0; i<length; i++){
+					$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));
+					numPromis++;
+				};
+
+				var buttonMore = createButtonMore();
+				$promiSection.append(buttonMore);
+
+				$(buttonMore).on("click", function(){
+					createMorePromiViews(category, numPromis, $promiSection);	
+				});
+			});
+	};
+
+	function createButtonMore(){
+		var button = $('<button class="btn" id="button-more" type="button">Mehr</button>');
+		return button;
+	};
+
+	function deleteButtonMore(){
+		$("#button-more").remove();
 	};
 
  	var socket = io.connect('http://localhost');

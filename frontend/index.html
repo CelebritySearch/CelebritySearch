@@ -33,7 +33,7 @@
 				    <div class="tab-content">
 					    <div id="section-promis" class="tab-pane active" id="tab1">
 					    	<div class="row-fluid">
-						    	<div class="span4">
+						    	<!--<div class="span4">
 						    		<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
 								    <div class="thumbnail" id="celebrity1">
 								    <h4>Promi 1</h4>
@@ -57,7 +57,7 @@
 									    <img src="img/schauspieler.png" class="img-rounded">
 									    </div>  
 									</ul>
-								</div>
+								</div>-->
 							</div>
 					    </div>
 					    <div id="section-tweets" class="tab-pane" id="tab2">
@@ -151,64 +151,55 @@
 	  	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchauspieler"> Schauspieler
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchauspieler">Schauspieler</label>
 	    	</a>
      	</li>
 	  	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSportler"> Sportler
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSportler">Sportler</label>
 	    	</a>
      	</li>
 	  	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionComedians"> Comedians
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionComedians">Comedians</label>
 	    	</a>
      	</li>
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionMusiker"> Musiker
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionMusiker">Musiker</label>
 	    	</a>
      	</li>
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionMode"> Mode
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionMode">Mode</label>
 	    	</a>
      	</li>
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionPolitiker"> Politiker
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionPolitiker">Politiker</label>
 	    	</a>
      	</li>
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchriftsteller"> Schriftsteller
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchriftsteller">Schriftsteller</label>
 	    	</a>
      	</li>
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionReality-Stars"> Reality-Stars
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionReality-Stars">Reality-Stars</label>
 	    	</a>
      	</li>
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionModeratoren"> Moderatoren
-	    	</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionModeratoren">Moderatoren</label>
 	    	</a>
      	</li>
 	</ul>
@@ -259,6 +250,26 @@
 	 	$("#section-promis").removeClass("active");
 	});
 
+	$(".checkbox").on("click", function(event){
+		
+
+		var categories = [];
+
+			var checkboxEls = $("#facetted-search").find(".checkbox");
+			for(var i = 0; i<checkboxEls.length; i++){
+				var checkbox = $(checkboxEls[i]).find(".optionsFacettedSearch");
+
+					if($(checkbox).prop("checked") == true){
+					categories.push(($(checkboxEls[i]).text().replace(/[\n|\s|\r|\t]*/,"")));
+					
+				
+				}
+				
+			}
+			testCategoryTweets(categories);
+
+	});
+
 	function testCategoryTweets(category){
 		var $tweetSection = $('#section-tweets');
 		$tweetSection.empty();
@@ -273,12 +284,33 @@
 	};
 	
 	function createTweetView(name, text, profile_image_url){
-		var view = $('<div class="tweet" id="section-tweet1"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
+		var view = $('<div class="tweet"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
 		$(view.find('.tweet-pic')[0]).attr("src", profile_image_url);
 		$(view.find('.celebrity-name')[0]).text(name);
 		$(view.find('.tweet-text')[0]).text(text);
 
 		return view;
+	};
+
+	function createPromiView(name, profile_image_url){
+		var view = $('<div class="span4"><ul class="thumbnails text-center celebrity-section"><div class="thumbnail" id="celebrity1"><h4 class="celebrity-name">Promi 1</h4><img src="img/schauspieler.png" class="img-rounded promi-pic" ></div></ul></div>');
+		$(view.find('.promi-pic')[0]).attr("src", profile_image_url);
+		$(view.find('.celebrity-name')[0]).text(name);
+
+		return view;
+	};
+
+	function getPromiData(category){
+		var $promiSection = $("promi-section");
+		$promiSection.empty();
+
+		$.get('/celeb', {category: category}, function(celebs){
+			var length = celebs.length;
+
+			for(var i = 0; i<length; i++){
+				$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));
+			}
+		});
 	};
 
  	var socket = io.connect('http://localhost');

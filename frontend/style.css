@@ -102,6 +102,7 @@ body{
 	height: 643px;
 	z-index: 1;
 	display: none;
+	overflow: auto;
 }
 
 .well .container{
@@ -160,6 +161,32 @@ body{
 	top: 150px;
 	display: none;
 }
+
+.row{
+	margin-left: 60px !important;
+}
+
+.span4{
+	width: 130px !important;
+	height: 150px !important;
+
+}
+
+.celebrity-thumbnail{
+	width: 130px;
+	height: 130px;
+}
+
+.promi-pic{
+	width: 55px;
+	height: 55px;
+}
+
+.promi-name{
+	font-size: 16px;
+}
+
+
 
 
 

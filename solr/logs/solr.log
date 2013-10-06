@@ -5257,3 +5257,182 @@ INFO  - 2013-10-06 12:42:41.163; org.apache.solr.core.CachingDirectoryFactory; C
 INFO  - 2013-10-06 12:42:41.164; org.apache.solr.core.CachingDirectoryFactory; looking to close D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index [CachedDir<<refCount=0;path=D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index;done=false>>]
 INFO  - 2013-10-06 12:42:41.168; org.apache.solr.core.CachingDirectoryFactory; Closing directory: D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index
 INFO  - 2013-10-06 12:42:41.187; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/D:/Work/ProjectPeacock/project/solr/solr-webapp/webapp/},D:\Work\ProjectPeacock\project\solr/webapps/solr.war
+INFO  - 2013-10-06 13:41:00.386; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2013-10-06 13:41:00.448; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor D:\Work\ProjectPeacock\project\solr\contexts at interval 0
+INFO  - 2013-10-06 13:41:00.458; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: D:\Work\ProjectPeacock\project\solr\contexts\solr-jetty-context.xml
+INFO  - 2013-10-06 13:41:02.544; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2013-10-06 13:41:02.612; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2013-10-06 13:41:02.649; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2013-10-06 13:41:02.650; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2013-10-06 13:41:02.651; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2013-10-06 13:41:02.796; org.apache.solr.core.ConfigSolr; Loading container configuration from D:\Work\ProjectPeacock\project\solr\solr\solr.xml
+INFO  - 2013-10-06 13:41:02.964; org.apache.solr.core.SolrCoreDiscoverer; Looking for cores in D:\Work\ProjectPeacock\project\solr\solr
+INFO  - 2013-10-06 13:41:02.965; org.apache.solr.core.SolrCoreDiscoverer; Looking for cores in D:\Work\ProjectPeacock\project\solr\solr\bin
+INFO  - 2013-10-06 13:41:02.966; org.apache.solr.core.SolrCoreDiscoverer; Discovered properties file D:\Work\ProjectPeacock\project\solr\solr\celebrities\core.properties, adding to cores
+INFO  - 2013-10-06 13:41:02.971; org.apache.solr.core.SolrCoreDiscoverer; Discovered properties file D:\Work\ProjectPeacock\project\solr\solr\tweets\core.properties, adding to cores
+INFO  - 2013-10-06 13:41:02.979; org.apache.solr.core.CoreContainer; New CoreContainer 232369406
+INFO  - 2013-10-06 13:41:02.981; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2013-10-06 13:41:03.001; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2013-10-06 13:41:03.003; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2013-10-06 13:41:03.004; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2013-10-06 13:41:03.004; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2013-10-06 13:41:03.005; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2013-10-06 13:41:03.005; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2013-10-06 13:41:03.006; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2013-10-06 13:41:03.006; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2013-10-06 13:41:03.007; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2013-10-06 13:41:03.027; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2013-10-06 13:41:03.362; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2013-10-06 13:41:03.389; org.apache.solr.core.CoreContainer; Creating SolrCore 'celebrities' using instanceDir: D:\Work\ProjectPeacock\project\solr\solr\celebrities
+INFO  - 2013-10-06 13:41:03.389; org.apache.solr.core.CoreContainer; Creating SolrCore 'tweets' using instanceDir: D:\Work\ProjectPeacock\project\solr\solr\tweets
+INFO  - 2013-10-06 13:41:03.392; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'D:\Work\ProjectPeacock\project\solr\solr\celebrities\'
+INFO  - 2013-10-06 13:41:03.393; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'D:\Work\ProjectPeacock\project\solr\solr\tweets\'
+INFO  - 2013-10-06 13:41:03.503; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+WARN  - 2013-10-06 13:41:03.505; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/extraction/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\extraction\lib).
+WARN  - 2013-10-06 13:41:03.510; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.513; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/clustering/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\clustering\lib).
+WARN  - 2013-10-06 13:41:03.518; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.522; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/langid/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\langid\lib).
+INFO  - 2013-10-06 13:41:03.524; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+WARN  - 2013-10-06 13:41:03.525; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.525; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/extraction/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\extraction\lib).
+WARN  - 2013-10-06 13:41:03.527; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/velocity/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\contrib\velocity\lib).
+WARN  - 2013-10-06 13:41:03.531; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.534; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\tweets\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.536; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/clustering/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\clustering\lib).
+WARN  - 2013-10-06 13:41:03.541; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.544; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/langid/lib/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\langid\lib).
+WARN  - 2013-10-06 13:41:03.548; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+WARN  - 2013-10-06 13:41:03.551; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../contrib/velocity/lib (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\contrib\velocity\lib).
+WARN  - 2013-10-06 13:41:03.555; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: D:\Work\ProjectPeacock\project\solr\solr\celebrities\..\..\..\dist).
+INFO  - 2013-10-06 13:41:03.741; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2013-10-06 13:41:03.746; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2013-10-06 13:41:03.754; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_44
+INFO  - 2013-10-06 13:41:03.758; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_44
+INFO  - 2013-10-06 13:41:03.904; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-10-06 13:41:03.904; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2013-10-06 13:41:03.916; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-10-06 13:41:03.931; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2013-10-06 13:41:04.010; org.apache.solr.schema.IndexSchema; [celebrities] Schema name=example
+INFO  - 2013-10-06 13:41:04.024; org.apache.solr.schema.IndexSchema; [tweets] Schema name=example
+INFO  - 2013-10-06 13:41:04.909; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2013-10-06 13:41:04.909; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2013-10-06 13:41:05.077; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 13:41:05.091; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 13:41:05.102; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 13:41:05.102; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2013-10-06 13:41:05.432; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-10-06 13:41:05.432; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2013-10-06 13:41:05.444; org.apache.solr.core.SolrCore; [celebrities] Opening new SolrCore at D:\Work\ProjectPeacock\project\solr\solr\celebrities\, dataDir=D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\
+INFO  - 2013-10-06 13:41:05.444; org.apache.solr.core.SolrCore; [tweets] Opening new SolrCore at D:\Work\ProjectPeacock\project\solr\solr\tweets\, dataDir=D:\Work\ProjectPeacock\project\solr\solr\tweets\data\
+INFO  - 2013-10-06 13:41:05.477; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2013-10-06 13:41:05.478; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2013-10-06 13:41:05.486; org.apache.solr.core.SolrCore; [celebrities] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2013-10-06 13:41:05.487; org.apache.solr.core.SolrCore; [tweets] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2013-10-06 13:41:05.487; org.apache.solr.core.SolrCore; [celebrities] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2013-10-06 13:41:05.488; org.apache.solr.core.SolrCore; [tweets] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2013-10-06 13:41:05.507; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\tweets\data
+INFO  - 2013-10-06 13:41:05.507; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\celebrities\data
+INFO  - 2013-10-06 13:41:05.508; org.apache.solr.core.SolrCore; New index directory detected: old=null new=D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index/
+INFO  - 2013-10-06 13:41:05.508; org.apache.solr.core.SolrCore; New index directory detected: old=null new=D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index/
+INFO  - 2013-10-06 13:41:05.509; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\tweets\data\index
+INFO  - 2013-10-06 13:41:05.510; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\Work\ProjectPeacock\project\solr\solr\celebrities\data\index
+INFO  - 2013-10-06 13:41:05.522; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2013-10-06 13:41:05.522; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2013-10-06 13:41:05.522; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2013-10-06 13:41:05.522; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2013-10-06 13:41:05.523; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2013-10-06 13:41:05.523; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2013-10-06 13:41:05.528; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2013-10-06 13:41:05.528; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2013-10-06 13:41:05.529; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2013-10-06 13:41:05.529; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2013-10-06 13:41:05.661; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.661; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.662; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.663; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.667; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2013-10-06 13:41:05.669; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2013-10-06 13:41:05.669; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.670; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.675; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2013-10-06 13:41:05.675; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2013-10-06 13:41:05.678; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2013-10-06 13:41:05.678; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2013-10-06 13:41:05.681; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2013-10-06 13:41:05.682; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 13:41:05.681; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2013-10-06 13:41:05.683; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 13:41:05.684; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 13:41:05.684; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2013-10-06 13:41:05.684; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.685; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.686; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.686; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.686; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.687; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.687; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.688; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2013-10-06 13:41:05.691; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2013-10-06 13:41:05.691; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2013-10-06 13:41:05.696; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2013-10-06 13:41:05.696; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2013-10-06 13:41:05.699; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2013-10-06 13:41:05.699; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2013-10-06 13:41:05.710; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2013-10-06 13:41:05.710; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2013-10-06 13:41:05.710; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.711; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.711; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.711; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.712; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.712; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.712; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.712; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.713; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.713; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.713; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.713; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.714; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.714; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.715; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.714; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2013-10-06 13:41:05.733; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 13:41:05.733; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 13:41:05.739; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 13:41:05.739; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 13:41:05.740; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 13:41:05.741; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2013-10-06 13:41:06.045; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@38c13714 main
+INFO  - 2013-10-06 13:41:06.097; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2013-10-06 13:41:06.097; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2013-10-06 13:41:06.098; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2013-10-06 13:41:06.106; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2013-10-06 13:41:06.119; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2013-10-06 13:41:06.122; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: D:\Work\ProjectPeacock\project\solr\solr\celebrities\conf\elevate.xml
+INFO  - 2013-10-06 13:41:06.188; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2013-10-06 13:41:06.190; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@38c13714 main{StandardDirectoryReader(segments_ev:1372 _er(4.4):C236/7 _es(4.4):C1 _et(4.4):C1 _eu(4.4):C1 _ev(4.4):C1 _ew(4.4):C1 _ex(4.4):C1 _ey(4.4):C1)}
+INFO  - 2013-10-06 13:41:06.191; org.apache.solr.core.CoreContainer; registering core: celebrities
+INFO  - 2013-10-06 13:41:06.196; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@2906b654 main
+INFO  - 2013-10-06 13:41:06.245; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2013-10-06 13:41:06.246; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2013-10-06 13:41:06.246; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2013-10-06 13:41:06.246; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2013-10-06 13:41:06.250; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2013-10-06 13:41:06.251; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: D:\Work\ProjectPeacock\project\solr\solr\tweets\conf\elevate.xml
+INFO  - 2013-10-06 13:41:06.256; org.apache.solr.core.SolrCore; [celebrities] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=57 
+INFO  - 2013-10-06 13:41:06.272; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-10-06 13:41:06.273; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2013-10-06 13:41:06.274; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2013-10-06 13:41:06.276; org.apache.solr.core.SolrCore; [celebrities] Registered new searcher Searcher@38c13714 main{StandardDirectoryReader(segments_ev:1372 _er(4.4):C236/7 _es(4.4):C1 _et(4.4):C1 _eu(4.4):C1 _ev(4.4):C1 _ew(4.4):C1 _ex(4.4):C1 _ey(4.4):C1)}
+INFO  - 2013-10-06 13:41:06.279; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2013-10-06 13:41:06.280; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@2906b654 main{StandardDirectoryReader(segments_9t:1383 _8d(4.4):C50/11 _er(4.4):C17/4 _da(4.4):C12/3 _ci(4.4):C2 _f8(4.4):C13/3 _cw(4.4):C1 _cy(4.4):C2 _d0(4.4):C2 _de(4.4):C1 _f9(4.4):C1 _fb(4.4):C1 _fd(4.4):C1 _ff(4.4):C1 _fh(4.4):C1)}
+INFO  - 2013-10-06 13:41:06.280; org.apache.solr.core.CoreContainer; registering core: tweets
+INFO  - 2013-10-06 13:41:06.288; org.apache.solr.servlet.SolrDispatchFilter; user.dir=D:\Work\ProjectPeacock\project\solr
+INFO  - 2013-10-06 13:41:06.289; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2013-10-06 13:41:06.299; org.apache.solr.core.SolrCore; [tweets] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=14 status=0 QTime=13 
+INFO  - 2013-10-06 13:41:06.319; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2013-10-06 13:41:06.320; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2013-10-06 13:41:06.321; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2013-10-06 13:41:06.322; org.apache.solr.core.SolrCore; [tweets] Registered new searcher Searcher@2906b654 main{StandardDirectoryReader(segments_9t:1383 _8d(4.4):C50/11 _er(4.4):C17/4 _da(4.4):C12/3 _ci(4.4):C2 _f8(4.4):C13/3 _cw(4.4):C1 _cy(4.4):C2 _d0(4.4):C2 _de(4.4):C1 _f9(4.4):C1 _fb(4.4):C1 _fd(4.4):C1 _ff(4.4):C1 _fh(4.4):C1)}
+INFO  - 2013-10-06 13:41:06.335; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983

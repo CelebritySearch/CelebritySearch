@@ -101,7 +101,7 @@
 
    <!-- fields for the twitter test -->
 
-   <field name="created_at" type="string" indexed="true" stored="true" />
+   <field name="created_at" type="tdate" indexed="true" stored="true" />
    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
    <field name="retweet_count" type="int" indexed="true" stored="true" />
    <field name="favorite_count" type="int" indexed="true" stored="true" />

@@ -16,25 +16,31 @@ exports.getCelebData = function(screen_name, callback){
 		if(err){
 			console.log(err);
 		} else {
-			var celeb = {
-				"name": data.name,
-				"screen_name": data.screen_name,
-				"id": data.id_str,
-				"created_at": data.created_at,
-				"profile_image_url": data.profile_image_url,
-				"location": data.location,
-				"favourites_count": data.favourites_count,
-				"listed_count": data.listed_count,
-				"protected": data.protected,
-				"lang": data.lang,
-				"verified": data.verified,
-				"friends_count": data.friends_count,
-				"statuses_count": data.statuses_count,
-				"url": data.url,
-				"followers_count": data.followers_count
-			}
+			if(data.constructor == TypeError){
+				console.log("Error: No callback specified");
+			} else {
+				var date = parseTwitterDate(data.created_at);
 
-			callback(celeb);
+				var celeb = {
+					"name": data.name,
+					"screen_name": data.screen_name,
+					"id": data.id_str,
+					"created_at": date.toISOString(),
+					"profile_image_url": data.profile_image_url,
+					"location": data.location,
+					"favourites_count": data.favourites_count,
+					"listed_count": data.listed_count,
+					"protected": data.protected,
+					"lang": data.lang,
+					"verified": data.verified,
+					"friends_count": data.friends_count,
+					"statuses_count": data.statuses_count,
+					"url": data.url,
+					"followers_count": data.followers_count
+				}
+
+				callback(celeb);
+			}
 		}
 	});
 };
@@ -87,4 +93,8 @@ exports.openCelebStream = function(userIds, callback){
 				}
 			});
 		});
+};
+
+var parseTwitterDate = function(date){   
+  return new Date(Date.parse(date.replace(/( \+)/, ' UTC$1')));
 };

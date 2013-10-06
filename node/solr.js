@@ -85,26 +85,45 @@ var addCelebsFromFile = function(path){
 
 var addCeleb = function(screen_name, categories){
 	twitter.getCelebData(screen_name, function(data){
-		data.categories = categories;
+		var date = parseTwitterDate(data.created_at).toISOString();
 
-		celebClient.add(data, function(err, obj){
+		var celeb = {
+			"name": data.name,
+			"screen_name": data.screen_name,
+			"id": data.id_str,
+			"created_at": date,
+			"profile_image_url": data.profile_image_url,
+			"location": data.location,
+			"favourites_count": data.favourites_count,
+			"listed_count": data.listed_count,
+			"protected": data.protected,
+			"lang": data.lang,
+			"verified": data.verified,
+			"friends_count": data.friends_count,
+			"statuses_count": data.statuses_count,
+			"url": data.url,
+			"followers_count": data.followers_count,
+			"categories": categories
+		};
+
+		celebClient.add(celeb, function(err, obj){
 			if(err){
 				console.log(err);
 			} else {
-				celebClient.commit(function(err, res){
-					if(err){
-						console.log(err);
-					} else {
-						console.log(res);
-					}
-				})
+				console.log(obj);
 			}
 		});
 	});
 };
 
-var addUserTimeline = function(getUserTimeline){
-	twitter.getUserTimeline(screen_name, function(_data){
+var addUserTimeline = function(screen_name, count){
+	var params = {};
+	params.screen_name = screen_name;
+	if(count){
+		params.count = parseInt(count);
+	}
+
+	twitter.getUserTimeline(params, function(_data){
 		for(var i = 0; i < _data.length; i++){
 			addTweet(_data[i]);			
 		}
@@ -112,8 +131,10 @@ var addUserTimeline = function(getUserTimeline){
 };
 
 var addTweet = function(data){
+	var date = parseTwitterDate(data.created_at).toISOString();
+
 	var tweet = {
-		created_at: data.created_at,
+		created_at: date,
 		id: data.id_str,
 		retweet_count: data.retweet_count,
 		favorite_count: data.favorite_count,
@@ -133,22 +154,13 @@ var addTweet = function(data){
 	});
 };
 
-var getTweets = function(screen_names, callback){
-	var querystring = '';
-	if(screen_names.contructor == Array){
-		for(var i = 0; i < screen_names.length; i++){
-			if(i > 0){
-				querystring = querystring+ " OR ";
-			}
-
-			querystring = querystring+ "screen_name:" + screen_names[i];
-		}
-	} else {
-		querystring = 'screen_name:' + screen_names;
-	}
-
-	console.log(querystring);
-	var query = tweetClient.createQuery().q(querystring);
+var getTweets = function(params, callback){
+	var query = buildQuery(tweetClient, {
+		words: params.screen_name,
+		field: "screen_name",
+		start: params.start,
+		rows: params.rows
+	});
 
 	tweetClient.search(query, function(err, obj){
 		if (err) {
@@ -159,19 +171,20 @@ var getTweets = function(screen_names, callback){
 	});
 };
 
-var getCategoryTweets = function(categories, callback){
-	getCategoryCelebs(categories, function(celebs){
-		var querystring = '';
-
+var getCategoryTweets = function(params, callback){
+	getCategoryCelebs({category: params.category, rows: 100}, function(celebs){
+		var screen_names = [];
 		for(var i = 0; i < celebs.length; i++){
-			if(i > 0){
-				querystring = querystring+ " OR ";
-			}
-
-			querystring = querystring+ "screen_name:" + celebs[i].screen_name;
+			screen_names.push(celebs[i].screen_name);
 		}
 
-		var query = tweetClient.createQuery().q(querystring);
+		var query = buildQuery(tweetClient, {
+			words: screen_names,
+			field: "screen_name",
+			start: params.start,
+			rows: params.rows,
+			sort: {created_at: "desc"}
+		});
 
 		tweetClient.search(query, function(err, obj){
 			if(err){
@@ -208,21 +221,13 @@ var search = function(query, callback){
 };
 
 // get celebrity data by sreen_name
-var getCeleb = function(celebrities, callback){
-	if(celebrities.constructor != Array){
-		celebrities = ['' + celebrities];
-	}
-
-	var querystring = '';
-	for(var i = 0; i < celebrities.length; i++){
-		if(i > 0){
-			querystring = querystring+ " OR ";
-		}
-
-		querystring = querystring+ "screen_name:" + celebrities[i];
-	}
-
-	var query = celebClient.createQuery().q(querystring);
+var getCeleb = function(params, callback){
+	var query = buildQuery(celebClient, {
+		words: params.screen_name,
+		field: "screen_name",
+		start: params.start,
+		rows: params.rows
+	});
 
 	celebClient.search(query, function(err, obj){
 		if(err){
@@ -234,21 +239,13 @@ var getCeleb = function(celebrities, callback){
 };
 
 // get celebrity data by categories
-var getCategoryCelebs = function(categories, callback){
-	if(categories.constructor != Array){
-		categories = [categories+''];
-	}
-
-	var querystring = '';
-	for(var i = 0; i < categories.length; i++){
-		if(i > 0){
-			querystring = querystring+ " OR ";
-		}
-
-		querystring = querystring+ "categories:" + categories[i];
-	}
-
-	var query = celebClient.createQuery().q(querystring).rows(20);
+var getCategoryCelebs = function(params, callback){
+	var query = buildQuery(celebClient, {
+		words: params.category,
+		field: "categories",
+		start: params.start,
+		rows: params.rows
+	});
 
 	celebClient.search(query, function(err, obj){
 		if(err){
@@ -258,6 +255,37 @@ var getCategoryCelebs = function(categories, callback){
 			callback(obj.response.docs);
 		}
 	});
+};
+
+var parseTwitterDate = function(date){   
+  return new Date(Date.parse(date.replace(/( \+)/, ' UTC$1')));
+};
+
+var buildQuery = function(client, params){
+	if(params.words.constructor != Array){
+		params.words = [params.words+''];
+	}
+
+	var querystring = '';
+	for(var i = 0; i < params.words.length; i++){
+		if(i > 0){
+			querystring = querystring+ " OR ";
+		}
+
+		querystring = querystring+ params.field + ":" + params.words[i];
+	}
+
+	var rows = params.rows || 25;
+	var start = params.start || 0;
+	var query = client.createQuery().q(querystring).start(start).rows(rows);
+
+	if(params.sort){
+		console.log(params.sort);
+		query.sort(params.sort);
+	}
+	console.log(util.inspect(query));
+
+	return query;
 };
 
 module.exports.addCelebsFromFile = addCelebsFromFile;

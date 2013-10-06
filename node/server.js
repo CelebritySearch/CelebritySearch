@@ -28,24 +28,34 @@ app.get("/startMonitoringTwitter", function(req, res){
 });
 
 app.get("/celeb", function(req, res){
+	var params = {};
+	params.start = req.query.start;
+
 	if(req.query.category){
-		solr.getCategoryCelebs(req.query.category, function(celebs){
+		params.category = req.query.category;
+		solr.getCategoryCelebs(params, function(celebs){
 			res.send(celebs);
 		});
 	} else if(req.query.screen_name){
-		solr.getCeleb(req.query.screen_name, function(celeb){
+		params.screen_name = req.query.screen_name;
+		solr.getCeleb(params, function(celeb){
 			res.send(celeb);
 		});
 	}
 });
 
 app.get("/tweets", function(req, res){
+	var params = {};
+	params.start = req.query.start || 0;
+
 	if(req.query.category){
-		solr.getCategoryTweets(req.query.category, function(tweets){
+		params.category = req.query.category;
+		solr.getCategoryTweets(params, function(tweets){
 			res.send(tweets);
 		});
 	} else if(req.query.screen_name){
-		solr.getTweets(req.query.screen_name, function(tweets){
+		params.screen_name = req.query.screen_name;
+		solr.getTweets(params, function(tweets){
 			res.send(tweets);
 		});
 	}

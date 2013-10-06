@@ -18,6 +18,10 @@ app.get("/addCeleb", function(req, res){
 	twitter.addCeleb(screen_name, categories);
 });
 
+app.get("/addUserTimeline", function(req, res){
+	solr.addUserTimeline(req.query.name, req.query.count);
+});
+
 app.get("/addCelebsFromFile", function(req, res){
 	solr.addCelebsFromFile(__dirname + '../../frontend/listen.txt');
 	res.end();
@@ -25,6 +29,10 @@ app.get("/addCelebsFromFile", function(req, res){
 
 app.get("/startMonitoringTwitter", function(req, res){
 
+});
+
+app.get("/addCelebTweets", function(req, res){
+	solr.addCelebTweets();
 });
 
 app.get("/celeb", function(req, res){

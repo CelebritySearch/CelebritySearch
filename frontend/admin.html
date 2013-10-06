@@ -51,6 +51,18 @@
 	  			<div class="row-fluid">
 					<button id="addCelebsFromFile" class="btn btn-primary btn-large" type="button">Add</button>
 	  			</div>
+	  			<hr />
+	  			<h3>Add User Timeline to Solr index</h3>
+	  			<div class="row-fluid">
+	  				<form class="form-search">
+	  					<input type="text" class="input-xxlarge" id="inputUserTimeline">
+	  					<button id="addUserTimeline" class="btn btn-primarey btn-large" type="button">Add User Timeline</button>
+	  				</form>
+	  			</div><hr />
+	  			<h3>Add Tweets for all Celebrities in Database</h3>
+	  			<div class="row-fluid">
+  					<button id="addCelebTweets" class="btn btn-primarey btn-large" type="button">Index Tweets</button>
+	  			</div>
 	  		</div>
 		</div>
 
@@ -120,7 +132,20 @@
 
 		$("#addCelebsFromFile").on("click", function(){
 			$.get('/addCelebsFromFile', function(data){
-				
+				if(data)console.log(data);
+			});
+		});
+
+		$("#addUserTimeline").on("click", function(){
+			var name = $('#inputUserTimeline').val();
+			$.get('/addUserTimeline', { name: name, count: 100 }, function(data){
+				if(data)console.log(data);
+			});
+		});
+
+		$("#addCelebTweets").on("click", function(){
+			$.get('/addCelebTweets', function(data){
+				if(data)console.log(data);
 			});
 		});
 

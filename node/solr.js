@@ -116,6 +116,20 @@ var addCeleb = function(screen_name, categories){
 	});
 };
 
+var addCelebTweets = function(){
+	var query = celebClient.createQuery().q("*:*").rows(300);
+	celebClient.search(query, function(err, obj){
+		if(err){
+			console.log(err);
+		} else {
+			var celebs = obj.response.docs;
+			for(var i = 0; i < celebs.length; i++){
+				addUserTimeline(celebs[i].screen_name, 100);
+			}			
+		}
+	});
+};
+
 var addUserTimeline = function(screen_name, count){
 	var params = {};
 	params.screen_name = screen_name;
@@ -244,7 +258,8 @@ var getCategoryCelebs = function(params, callback){
 		words: params.category,
 		field: "categories",
 		start: params.start,
-		rows: params.rows
+		rows: params.rows,
+		sort: {screen_name: "asc"}
 	});
 
 	celebClient.search(query, function(err, obj){
@@ -297,3 +312,4 @@ module.exports.addCeleb = addCeleb;
 module.exports.addTweet = addTweet;
 module.exports.addUserTimeline = addUserTimeline;
 module.exports.search = search;
+module.exports.addCelebTweets = addCelebTweets;

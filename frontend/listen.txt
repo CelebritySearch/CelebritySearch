@@ -6,33 +6,28 @@ Musiker
 
 	[Adam Levine, adamlevine], [50 Cent, 50cent], [Britney Spears, britneyspears], [Miley Cyrus, MileyCyrus], [Selena Gomez, selenagomez], [Demi Lovato, ddlovato], [Christina Aguilera, xtina], [Justin Timberlake, jtimberlake], [Justin Bieber, justinbieber], [Adele, OfficialAdele], [Beyonce Knowles, Beyonce], [Mariah Carey, MariahCarey], [Cher, cher], [Phil Collins, PhilCollinsFeed], [Celine Dion, celinedion], [Eminem, Eminem], [Nelly Furtado, NellyFurtado], [Enrique Iglesias, enrique305], [Rihanna, rihanna], [Alicia Keys, aliciakeys], [Lenny Kravitz, LennyKravitz], [Lady Gaga, ladygaga], [Katy Perry, katyperry], [Pink, Pink], [Seal, Seal], [David Guetta, davidguetta], [Shakira, shakira], [Depeche Mode, depechemode], [Robin Thicke, robinthicke], [Kanye West, kanyewest], [Jay-Z, S_C_], [Green Day, GreenDay], [Iron Maiden, IronMaiden], [Sido, siggismaliz], [Bushido, Bushide78], [Fettes Brot, fettesbrot], [Silbermond, SILBERMOND], [Kraftklub, Kraftklub], [Rammstein, RSprachrohr], [Cro, thisiscro], [Casper, BenniferRostock], [Emeli Sande, emelisande], [Taylor Swift, taylorswift13], [Jennifer Lopez, JLo], [Lil Wayne, LilTunechi], [Coldplay, coldplay], [Dr. Dre, drdre], [Fergie, Fergie], [Nicole Scherzinger, NicoleScherzy], [Will.i.am, iamwill], [Black Eyed Peas, bep], [Chris Brown, chrisbrown]
 
-
 Comedians
 
 	[Adam Sandler, AdamSandler], [Anna Faris, AnnaKFaris], [Chris Rock, chrisrock], [Conan O'Brian, ConanOBrien], [Jerry Seinfield, JerrySeinfeld], [Jay Leno, jayleno], [Jimmy Fallon, jimmyfallon], [Jim Carrey, JimCarrey], [Jonah Hill, JonahHill], [Rebel Wilson, Rebel Wilson], [Russel Brand, rustyrockets], [Steve Martin, SteveMartinToGo], [David Chappelle, DaveChappelle], [Patton Oswald, pattonoswalt], [Kevin James, KevinJames], [Eddie Murphy, eddiemurphy], [Bill Cosby, BillCosby], [Joan Rivers,Joan_Rivers], [Oliver Pocher, oliverpocher], [Joko Winterscheidt, officiallyjoko], [Klaas Heufer-Umlauf, damitdasklaas], [Palina Rojinski, PalinaRojinski], [Mario Barth, mariobarth], [Dieter Nuhr, dieternuhr], [Otto Waalkes, OTTOausE], [Stephen Colbert, StephenAtHome], [Craig Ferguson, CraigyFerg], [Ellen DeGeneres, TheEllenShow]
-
 
 Sportler
 
 	[Basti Schweinsteiger, BSchweinsteiger], [Lukas Podolski, Podolski10], [Serena Williams, serenawilliams], [Venus Williams, Venuseswilliams], [Boris Becker, TheBorisBecker], [Lance Armstrong, lancearmstrong], [Fernando Alonso, alo_oficial], [Lewis Hamilton, LewisHamilton], [Mario Götze, MarioGoetze], [Dirk Nowitzki, swish41], [Lebron James, KingJames], [Shaqhile O'Neal, SHAQ], [Kobe Bryant, kobebryant], [Mario Balotelli, FinallyMario], [Manuel Neuer, Manuel_Neuer], [Jerome Boateng, JB17Official], [Vitali Klitschko, Klitschko], [Wladimir Klitschko, Klitschko], [Arnold Schwarzenegger, Schwarzenegger], [Cristiano Ronaldo, Cristiano]
 
-
 Moderatoren
 
 	[Ryan Seacrest, RyanSeacrest], [Nela Panghy-Lee, NelaPanghyLee], [Oprah Winfrey, Oprah], [Conan O'Brian, ConanOBrien], [Jay Leno, jayleno], [Jimmy Fallon, jimmyfallon], [Joko Winterscheidt, officiallyjoko], [Klaas Heufer-Umlauf, damitdasklaas], [Ellen DeGeneres, TheEllenShow], [Tyra Banks, tyrabanks], [Larry King, kingsthings], [Zack Galifianakis, galifianakisz], [Jimmy Kimmel, jimmykimmel], [Jerry Springer, jerryspringer], [Mario Lopez,MarioLopezExtra]
-
 
 Politiker
 
 	[Barack Obama, BarackObama], [Nelson Mandela, NelsonMandela], [David Cameron, David_Cameron], [Arnold Schwarzenegger, Schwarzenegger], [John McCain, SenJohnMcCain], [Joe Biden, JoeBiden], [Shashi Tharoor, ShashiTharoor], [Nicolas Sarkozy, NicolasSarkozy], [Kevin Rudd, KRuddMP], [Bill Clinton, billclinton], [Condoleeza Rice, CondoleezzaRice], [Peer Steinbrück, peersteinbrueck], [Philipp Rösler, philipproesler], [Mitt Romney, MittRomney], [Sarah Palin, SarahPalinUSA], [Sigmar Gabriel, sigmargabriel], [Peter Altmeier, peteraltmaier], [Volker Beck, Volker_Beck], [Jürgen Trittin, JTrittin], [Hannelore Kraft, HanneloreKraft], [Katja Kipping, katjakipping], [Dorothee Bär, DoroBaer]
 
 Mode 
-	[Heidi Klum, heidiklum], [Tyra Banks, tyrabanks], [Naomi Campbell, NaomiCampbell], [Karl Lagerfeld, KarlLagerfeld], [Cara Delevigne, Caradelevingne], [Alessandra Ambrosio, AngelAlessandra], [Gisele Bündchen, giseleofficial], [Bar Rafaeli. BarRefaeli], [Erin Heatherton, ErinHeatherton], [Rosie Huntington-Whitely, RosieHW], [Miranda Kerr, MirandaKerr], [Adriana Lima, AdrianaLima], [Karolína Kurková, karolinakurkova], [Doutzen Kroes, Doutzen], [Elle MacPherson, ellemacpherson], [Marisa Miller, marisamiller], [Candice Swanepoel, angelcandice], [Eva Padberg, ThePberg], [Rick Genest, ricothezombie], [Andrej Pejic, Andrej_Pejic], [Markus Schenkenberg, MarcusSchenkenb]
+	[Heidi Klum, heidiklum], [Tyra Banks, tyrabanks], [Naomi Campbell, NaomiCampbell], [Karl Lagerfeld, KarlLagerfeld], [Cara Delevigne, Caradelevingne], [Alessandra Ambrosio, AngelAlessandra], [Gisele Bündchen, giseleofficial], [Bar Rafaeli, BarRefaeli], [Erin Heatherton, ErinHeatherton], [Rosie Huntington-Whitely, RosieHW], [Miranda Kerr, MirandaKerr], [Adriana Lima, AdrianaLima], [Karolína Kurková, karolinakurkova], [Doutzen Kroes, Doutzen], [Elle MacPherson, ellemacpherson], [Marisa Miller, marisamiller], [Candice Swanepoel, angelcandice], [Eva Padberg, ThePberg], [Rick Genest, ricothezombie], [Andrej Pejic, Andrej_Pejic], [Markus Schenkenberg, MarcusSchenkenb]
 
 Reality-Stars
 	[Kim Kardeshian, KimKardashian], [Khloé Kardashian, KhloeKardashian], [Kourtney Kardashian, KourtneyKardash], [Nicole Polizzi, snooki], [JWOWW, JENNIWOWW], [Mike Sorrentino, ItsTheSituation], [Pauly D, DJPaulyD], [Georgina Fleur, georgina], [Charlotte Letitia Crosby, CharlotteGShore], [Gary "Gaz" Beadle, GazGShore], [Vicky Pattison, VickyGShore], [Holly Hagan, HollyGShore], [Scott Timlin, ScottGShore], [James Tindale, JamesGShore], [Sophie Kasaei, SophieKasaei_]
 
-autoren
+Autoren
 	[E.L. James, E_L_James], [J.K. Rowling, jk_rowling], [Neil Gaiman, neilhimself], [Joanne Harris, joannechocolat], [Ian Rankin, beathigh], [Paulo Coelho, paulocoelho], [Jackie Collins, jackiecollins], [Nicholas Sparks, NicholasSparks], [Salman Rushdie , salmanrushdie], [Terry Pratchett, terryandrob]
-
 

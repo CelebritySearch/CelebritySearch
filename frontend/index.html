@@ -259,39 +259,11 @@
 	 	$("#section-promis").removeClass("active");
 	});
 
-	function fillTweetView(category){
-		var screen_names = [];
-		$.get('/celeb', {category: category}, function(data){
-			var docs = data.docs;
-			var length = docs.length;
-			for(var i = 0; i < length; i++){
-				screen_names.push(docs[i].screen_name);
-			}
-
-			$.get('/tweets', { screen_name: screen_names}, function(data){
-				var tweets = data.docs;
-				var length = tweets.length;
-				var $tweetSection = $('#section-tweets');
-
-				for(var i = 0; i <length; i++){
-					$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
-				}
-				
-				// $.get('/tweetViews', { tweetIds: tweetIds }, function(data){
-				// 	console.log(data);
-				// });
-			});
-		});
-	};
-
 	function testCategoryTweets(category){
 		var $tweetSection = $('#section-tweets');
 		$tweetSection.empty();
 
-		$.get('/categoryTweets', { category: category }, function(data){
-			console.log(data);
-
-			var tweets = data.docs;
+		$.get('/tweets', { category: category }, function(tweets){
 			var length = tweets.length;
 
 			for(var i = 0; i <length; i++){
@@ -313,6 +285,10 @@
 
  	socket.on('tweet', function(tweet){
  		console.log(tweet);
+ 	});
+
+ 	$.get("/search", {text: "zachbraff"}, function(data){
+ 		console.log(data);
  	});
 
  	function openCelebStream(screen_name){

@@ -183,10 +183,7 @@
 		var $tweetSection = $('#section-tweets');
 		$tweetSection.empty();
 
-		$.get('/categoryTweets', { category: category }, function(data){
-			console.log(data);
-
-			var tweets = data.docs;
+		$.get('/tweets', { category: category }, function(tweets){
 			var length = tweets.length;
 
 			for(var i = 0; i <length; i++){
@@ -208,6 +205,10 @@
 
  	socket.on('tweet', function(tweet){
  		console.log(tweet);
+ 	});
+
+ 	$.get("/search", {text: "zachbraff"}, function(data){
+ 		console.log(data);
  	});
 
  	function openCelebStream(screen_name){

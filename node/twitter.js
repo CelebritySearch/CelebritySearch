@@ -38,3 +38,53 @@ exports.getCelebData = function(screen_name, callback){
 		}
 	});
 };
+
+exports.getUserTimeline = function(screen_name, params, callback){
+	if(params.constructor == Function){
+		callback = params;
+	}
+
+	var twitParams = {};
+	twitParams.screen_name = screen_name;
+	twitParams.include_rts = 1;
+	if(params.constructor != Function){
+		twitParams.count = params.count;
+	} else {
+		twitParams.count = 10;
+	}
+
+	twit.getUserTimeline(twitParams, function(_data, err){
+		callback(_data);
+	});
+
+	callback(data);
+};
+
+exports.openCelebStream = function(userIds, callback){
+	if(!(userIds.constructor == Array)){
+		var userIds = [parseInt(userIds)];
+	}
+
+	twit
+		.stream('statuses/filter', userIds, function(stream){
+			stream.on('data', function(data){
+				if(data.retweet_count !== undefined && data.retweet_count !== null){
+					console.log(util.inspect(data));
+
+					var tweet = data;
+					var solrTweetData = {
+						"createdAt": tweet.created_at,
+						"id": tweet.id,
+						"text": tweet.text,
+						"retweet_count": tweet.retweet_count,
+						"favorite_count": tweet.favorite_count,
+						"userId": tweet.user.id,
+						"userName": tweet.user.name,
+						"screenName": tweet.user.screen_name
+					};
+
+					callback(data);
+				}
+			});
+		});
+};

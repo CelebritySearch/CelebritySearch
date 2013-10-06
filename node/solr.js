@@ -80,21 +80,17 @@ var addCelebsFromFile = function(path){
 				}, counter* TIME_BETWEEN_TWITTER_API_CALLS);
 			}
 		});
-		// create Array of screen_names from data
 	});
 };
 
 var addCeleb = function(screen_name, categories){
-	console.log(screen_name);
 	twitter.getCelebData(screen_name, function(data){
 		data.categories = categories;
-		console.log(util.inspect(data));
 
 		celebClient.add(data, function(err, obj){
 			if(err){
 				console.log(err);
 			} else {
-				console.log(util.inspect(obj));
 				celebClient.commit(function(err, res){
 					if(err){
 						console.log(err);
@@ -151,6 +147,7 @@ var getTweets = function(screen_names, callback){
 		querystring = 'screen_name:' + screen_names;
 	}
 
+	console.log(querystring);
 	var query = tweetClient.createQuery().q(querystring);
 
 	tweetClient.search(query, function(err, obj){
@@ -163,8 +160,7 @@ var getTweets = function(screen_names, callback){
 };
 
 var getCategoryTweets = function(categories, callback){
-	getCategoryCelebs(categories, function(data){
-		var celebs = data.response.docs;
+	getCategoryCelebs(categories, function(celebs){
 		var querystring = '';
 
 		for(var i = 0; i < celebs.length; i++){

@@ -281,9 +281,25 @@
 		$.get('/tweets', { category: category }, function(tweets){
 			var length = tweets.length;
 
+			var numTweets = 0;
 			for(var i = 0; i <length; i++){
 				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
 			}
+
+			if(numTweets == 0){
+				$tweetSection.append("<p>Keine Ergebnisse gefunden!<p>");
+			}
+			
+			if(numTweets == 20){
+
+				var buttonMore = createButtonMore();
+				$tweetSection.append(buttonMore);
+
+				$(buttonMore).on("click", function(){
+					createMoreTweetViews(category, numTweets, $tweetSection);	
+				});
+
+			}	
 		});
 	};
 	
@@ -316,6 +332,10 @@
 				$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));
 				numPromis++;
 			}
+
+			if(numPromis == 0){
+				$promiSection.append("<p>Keine Ergebnisse gefunden!<p>");
+			}
 			
 			if(numPromis == 20){
 
@@ -345,6 +365,25 @@
 
 				$(buttonMore).on("click", function(){
 					createMorePromiViews(category, numPromis, $promiSection);	
+				});
+			});
+	};
+
+	function createMoreTweetViews(category, numTweets, $tweetSection){
+			deleteButtonMore();
+			$.get('/celeb', {category: category, start: numTweets}, function(tweets){
+				var length = tweets.length;
+
+				for(var i = 0; i<length; i++){
+					$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
+					numTweets++;
+				};
+
+				var buttonMore = createButtonMore();
+				$tweetSection.append(buttonMore);
+
+				$(buttonMore).on("click", function(){
+					createMoreTweetViews(category, numTweets, $tweetSection);	
 				});
 			});
 	};

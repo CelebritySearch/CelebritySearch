@@ -138,14 +138,14 @@ body{
 
 .tweet{
 	border-bottom: 2px solid #00ACEE;
-	height: 140px;
+	height: 110px;
 	position: relative;
 }
 
 .tweet-pic{
 	position: absolute;
-	height: 100px;
-	width: 100px;
+	height: 48px;
+	width: 48px;
 	border: 1px solid black;
 	border-radius: 7px;
 	top: 20px;
@@ -155,7 +155,7 @@ body{
 .tweet-data{
 	position: absolute;
 	top: 20px;
-	left: 150px;
+	left: 94px;
 }
 
 .celebrity-name{

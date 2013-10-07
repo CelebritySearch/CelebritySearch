@@ -61,7 +61,10 @@
 	  			</div><hr />
 	  			<h3>Add Tweets for all Celebrities in Database</h3>
 	  			<div class="row-fluid">
-  					<button id="addCelebTweets" class="btn btn-primarey btn-large" type="button">Index Tweets</button>
+	  				<form class="form-search">
+	  					<input type="text" class="input-xxlarge" id="inputStartWithCeleb" placeholder="StartWith screen_name">
+						<button id="addCelebTweets" class="btn btn-primarey btn-large" type="button">Index Tweets</button>
+	  				</form>
 	  			</div>
 	  		</div>
 		</div>
@@ -144,9 +147,15 @@
 		});
 
 		$("#addCelebTweets").on("click", function(){
-			$.get('/addCelebTweets', function(data){
-				if(data)console.log(data);
-			});
+			if($('#inputStartWithCeleb').val() == ''){
+				$.get('/addCelebTweets', function(data){
+					if(data)console.log(data);
+				});
+			} else {
+				$.get('/addCelebTweets', {startWith: $('#inputStartWithCeleb').val() }, function(data){
+					if(data)console.log(data);
+				});
+			}
 		});
 
 	 </script>

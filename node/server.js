@@ -32,7 +32,11 @@ app.get("/startMonitoringTwitter", function(req, res){
 });
 
 app.get("/addCelebTweets", function(req, res){
-	solr.addCelebTweets();
+	if(req.query.startWith){
+		solr.addCelebTweets(req.query.startWith);
+	} else {
+		solr.addCelebTweets();
+	}
 });
 
 app.get("/celeb", function(req, res){

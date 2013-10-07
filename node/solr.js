@@ -12,7 +12,21 @@ var tweetClient = solr.createClient("127.0.0.1", "8983", "tweets");
 tweetClient.autoCommit = true;
 celebClient.autoCommit = true;
 
-var addCelebsFromFile = function(path){
+var addCelebsFromFile = function(path, startWith){
+	readCelebsFromFile(path, startWith, function(data){
+		var counter = 0;
+		_und.each(data, function(categories, screenName, list){
+			counter++;
+			if(data.hasOwnProperty(screenName)){
+				setTimeout(function(){
+					addCeleb(screenName, categories);
+				}, counter* TIME_BETWEEN_TWITTER_API_CALLS);
+			}
+		});
+	});
+};
+
+var readCelebsFromFile = function(path, startWith, callback){
 	fs.readFile(path, "utf-8", function(err, data){
 		if(err){
 			throw err;
@@ -39,7 +53,6 @@ var addCelebsFromFile = function(path){
 				var line = lines[i].split(/\]\,\s*\[/);
 				var categoryScreenNames = [];
 				for(var item = 0; item < line.length; item++){
-					console.log(line[item]);
 					categoryScreenNames.push(line[item].split(/\,\s*/)[1]);
 				}
 				screen_names.push(categoryScreenNames);
@@ -67,25 +80,59 @@ var addCelebsFromFile = function(path){
 					if(!_und.contains(data[screen_name], category)){
 						data[screen_name].push(category);
 					}
-				};
+				}
 			}
 		}
 
-		var counter = 0;
-		_und.each(data, function(categories, screenName, list){
-			counter++;
-			if(data.hasOwnProperty(screenName)){
-				setTimeout(function(){
-					addCeleb(screenName, categories);
-				}, counter* TIME_BETWEEN_TWITTER_API_CALLS);
+		callback(data);
+	});
+}
+
+var readScreenNamesFromFile = function(path, startWith, callback){
+	fs.readFile(path, "utf-8", function(err, data){
+		if(err){
+			throw err;
+		}
+
+		var content = data.split("\n");
+		var lines = [];
+
+		var processedParagraph = null;
+		for(var i = 0; i < content.length; i++){
+			processedParagraph = content[i].replace(/\r|\n/g, '');
+			if(processedParagraph === ''){
+				continue;
+			} else {
+				lines.push(processedParagraph);
 			}
-		});
+		}
+
+		var screen_names = [];
+		for(var i = 0; i < lines.length; i++){
+			if(lines[i].substring(0, 2).indexOf("\t") != -1){
+
+				var line = lines[i].split(/\]\,\s*\[/);
+				for(var item = 0; item < line.length; item++){
+					screen_names.push(line[item].split(/\,\s*/)[1]);
+				}
+			}
+		}
+
+		if(startWith){
+			screen_names = screen_names.slice(screen_names.indexOf(startWith), screen_names.length);
+		}
+
+		callback(screen_names);
 	});
 };
 
 var addCeleb = function(screen_name, categories){
 	twitter.getCelebData(screen_name, function(data){
-		var date = parseTwitterDate(data.created_at).toISOString();
+		if(data.created_at){
+			var date = parseTwitterDate(data.created_at).toISOString();
+		} else {
+			var date = data.created_at;
+		}
 
 		var celeb = {
 			"name": data.name,
@@ -116,16 +163,13 @@ var addCeleb = function(screen_name, categories){
 	});
 };
 
-var addCelebTweets = function(){
-	var query = celebClient.createQuery().q("*:*").rows(300);
-	celebClient.search(query, function(err, obj){
-		if(err){
-			console.log(err);
-		} else {
-			var celebs = obj.response.docs;
-			for(var i = 0; i < celebs.length; i++){
-				addUserTimeline(celebs[i].screen_name, 100);
-			}			
+var addCelebTweets = function(startWith){
+	readScreenNamesFromFile(__dirname + '../../frontend/listen.txt', startWith, function(celebs){
+
+		console.log(util.inspect(celebs));
+
+		for(var i = 0; i < celebs.length; i++){
+		 	addUserTimeline(celebs[i], 100);
 		}
 	});
 };
@@ -138,6 +182,7 @@ var addUserTimeline = function(screen_name, count){
 	}
 
 	twitter.getUserTimeline(params, function(_data){
+		console.log(_data);
 		for(var i = 0; i < _data.length; i++){
 			addTweet(_data[i]);			
 		}
@@ -145,7 +190,11 @@ var addUserTimeline = function(screen_name, count){
 };
 
 var addTweet = function(data){
-	var date = parseTwitterDate(data.created_at).toISOString();
+	if(data.created_at){
+		var date = parseTwitterDate(data.created_at).toISOString();
+	} else {
+		var date = data.created_at;
+	}
 
 	var tweet = {
 		created_at: date,

@@ -100,14 +100,14 @@
    -->
 
    <!-- celebrity fields -->
-   <field name="name" type="text_general" indexed="true" stored="true" />
+   <field name="name" type="string" indexed="true" stored="true" />
    <field name="screen_name" type="string" indexed="true" stored="true"/>
    <field name="id" type="string" indexed="true" stored="true"/>
    <field name="created_at" type="tdate" indexed="true" stored="true"/>
    <field name="profile_image_url" type="string" indexed="true" stored="true"/>
-   <field name="location" type="text_general" indexed="true" stored="true"/>
+   <field name="location" type="string" indexed="true" stored="true"/>
    <field name="id_str" type="string" indexed="true" stored="true"/>
-   <field name="url" type="text_general" indexed="true" stored="true"/>
+   <field name="url" type="string" indexed="true" stored="true"/>
    <field name="favourites_count" type="int" indexed="true" stored="true"/>
    <field name="listed_count" type="int" indexed="true" stored="true"/>
    <field name="protected" type="boolean" indexed="true" stored="true"/>
@@ -272,24 +272,9 @@
         is added to the index.  It's used either to index the same field differently,
         or to add multiple fields to the same field for easier/faster searching.  -->
 
-   <copyField source="cat" dest="text"/>
    <copyField source="name" dest="text"/>
-   <copyField source="manu" dest="text"/>
-   <copyField source="features" dest="text"/>
-   <copyField source="includes" dest="text"/>
-   <copyField source="manu" dest="manu_exact"/>
-
-   <!-- Copy the price into a currency enabled field (default USD) -->
-   <copyField source="price" dest="price_c"/>
 
    <!-- Text fields from SolrCell to search by default in our catch-all field -->
-   <copyField source="title" dest="text"/>
-   <copyField source="author" dest="text"/>
-   <copyField source="description" dest="text"/>
-   <copyField source="keywords" dest="text"/>
-   <copyField source="content" dest="text"/>
-   <copyField source="content_type" dest="text"/>
-   <copyField source="resourcename" dest="text"/>
    <copyField source="location" dest="text"/>
 
    <!-- Create a string version of author for faceting -->

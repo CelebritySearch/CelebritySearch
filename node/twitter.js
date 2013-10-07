@@ -19,51 +19,16 @@ exports.getCelebData = function(screen_name, callback){
 			if(data.constructor == TypeError){
 				console.log("Error: No callback specified");
 			} else {
-				var date = parseTwitterDate(data.created_at);
-
-				var celeb = {
-					"name": data.name,
-					"screen_name": data.screen_name,
-					"id": data.id_str,
-					"created_at": date.toISOString(),
-					"profile_image_url": data.profile_image_url,
-					"location": data.location,
-					"favourites_count": data.favourites_count,
-					"listed_count": data.listed_count,
-					"protected": data.protected,
-					"lang": data.lang,
-					"verified": data.verified,
-					"friends_count": data.friends_count,
-					"statuses_count": data.statuses_count,
-					"url": data.url,
-					"followers_count": data.followers_count
-				}
-
-				callback(celeb);
+				callback(data);
 			}
 		}
 	});
 };
 
-exports.getUserTimeline = function(screen_name, params, callback){
-	if(params.constructor == Function){
-		callback = params;
-	}
-
-	var twitParams = {};
-	twitParams.screen_name = screen_name;
-	twitParams.include_rts = 1;
-	if(params.constructor != Function){
-		twitParams.count = params.count;
-	} else {
-		twitParams.count = 10;
-	}
-
-	twit.getUserTimeline(twitParams, function(_data, err){
+exports.getUserTimeline = function(params, callback){
+	twit.getUserTimeline(params, function(_data, err){
 		callback(_data);
 	});
-
-	callback(data);
 };
 
 exports.openCelebStream = function(userIds, callback){
@@ -93,8 +58,4 @@ exports.openCelebStream = function(userIds, callback){
 				}
 			});
 		});
-};
-
-var parseTwitterDate = function(date){   
-  return new Date(Date.parse(date.replace(/( \+)/, ' UTC$1')));
 };

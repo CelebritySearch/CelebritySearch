@@ -271,6 +271,8 @@
    <copyField source="includes" dest="text"/>
    <copyField source="manu" dest="manu_exact"/>
 
+   <copyField source="user_name" dest="text" />
+
    <!-- Copy the price into a currency enabled field (default USD) -->
    <copyField source="price" dest="price_c"/>
 

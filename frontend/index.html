@@ -14,7 +14,7 @@
 	    <h1><center>Celebrity Twitter Search</center></h1>
 	    <div>
 	    <form class="form-search text-center">
-		  <input type="text" class="input-xxlarge">
+		  <input type="text" class="input-xxlarge" id="inputSearch">
 		  <button type="submit" class="btn btn-large btn-primary button-custom" id="search-button" href="#"><i class="icon-search icon-white"></i> Search</button>
 		</form>
 		</div>
@@ -226,29 +226,34 @@
 	 	//$("#detailansicht").css("visibility", "visible");
 	});
 
-	$("#close-button").on("click", function(){
+	$("#close-button").on("click", function(event){
 
 	 	$("#detailansicht").fadeOut(300);
 	 	$("#facetted-search").fadeOut(300);
 	 	//$("#detailansicht").css("visibility", "hidden");
 	});
 
-	$("#search-button").on("click", function(){
+	$("#search-button").on("click", function(event){
+		event.preventDefault();
 	 	$("#detailansicht").fadeIn(300);
+	 	$("#tab-tweets").addClass("active");
+	 	$("#section-tweets").addClass("active");
+	 	search($(inputSearch).val());
+	 	$("#tab-promis").removeClass("active");
+	 	$("#section-promis").removeClass("active");
 	});
 
-	$("#tab-promis").on("click", function(){
+	$("#tab-promis").on("click", function(event){
 	 	$("#tab-tweets").removeClass("active");
 	 	$("#section-tweets").removeClass("active");
-	 	fillPromiSection(category);
-	 	$("#tab-promis").addClass("active");
+	 	// fillPromiSection(category);
 	 	$("#section-promis").addClass("active");
 	});
  	
- 	$("#tab-tweets").on("click", function(){
+ 	$("#tab-tweets").on("click", function(event){
 	 	$("#tab-tweets").addClass("active");
 	 	$("#section-tweets").addClass("active");
-	 	testCategoryTweets(category);
+	 	// testCategoryTweets(category);
 	 	// fillTweetView(category);
 	 	$("#tab-promis").removeClass("active");
 	 	$("#section-promis").removeClass("active");
@@ -273,6 +278,24 @@
 		}
 		
 	});
+
+	function search(query){
+		console.log(query);
+		var $tweetSection = $('#section-tweets');
+		var $promiSection = $('#section-promis');
+		$tweetSection.empty();
+		$promiSection.empty();
+
+		$.get("/search", { text: query }, function(data){
+			for(var i = 0; i < data.tweets.length; i++){
+				$tweetSection.append(createTweetView(data.tweets[i].user_name, data.tweets[i].text, data.tweets[i].profile_image_url));
+			}
+
+			for(var i = 0; i < data.celebs.length; i++){
+				$promiSection.append(createPromiView(data.celebs[i].name, data.celebs[i].profile_image_url));
+			}
+		});
+	};
 
 	function testCategoryTweets(category){
 		var $tweetSection = $('#section-tweets');
@@ -337,7 +360,7 @@
 				$promiSection.append("<p>Keine Ergebnisse gefunden!<p>");
 			}
 			
-			if(numPromis == 20){
+			if(numPromis > 24){
 
 				var buttonMore = createButtonMore();
 				$promiSection.append(buttonMore);

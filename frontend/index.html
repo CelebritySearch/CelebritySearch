@@ -206,8 +206,6 @@
 
 	</div>
 
-	
-
 	<script src="libs/jquery-1.9.1.min.js"></script>
 	<script src="libs/underscore-min.js"></script>
 	<script type="text/javascript">
@@ -292,33 +290,17 @@
 			document.getElementById("ueberschrift").innerHTML = "Alle Kategorien";		
 		} else {
 			document.getElementById("ueberschrift").innerHTML = "Kategorisierte Suche";		
-		}
-		
-		
+		}		
 	});
 
-	function search(query){
-		var $tweetSection = $('#section-tweets');
-		var $promiSection = $('#section-promis');
-		$tweetSection.empty();
-		$promiSection.empty();
-
-		$.get("/search", { text: query }, function(data){
-			for(var i = 0; i < data.tweets.length; i++){
-				$tweetSection.append(createTweetView(data.tweets[i].user_name, data.tweets[i].text, data.tweets[i].profile_image_url));
-			}
-
-			for(var i = 0; i < data.celebs.length; i++){
-				$promiSection.append(createPromiView(data.celebs[i].name, data.celebs[i].profile_image_url, data.celebs[i].screen_name));
-			}
-		});
-	};
-
-	function createTweetView(name, text, profile_image_url, time){
+	function createTweetView(name, text, profile_image_url, time, screen_name){
 		var view = $('<div class="tweet"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><div class="tweet-time"></div><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
 		$(view.find('.tweet-time')[0]).text(time);
 		$(view.find('.tweet-pic')[0]).attr("src", profile_image_url);
 		$(view.find('.celebrity-name')[0]).text(name);
+		$(view.find('.celebrity-name')[0]).on('click', function(event){
+			fillTweetSection({screen_name: screen_name});
+		});
 		$(view.find('.tweet-text')[0]).text(text);
 
 		return view;
@@ -388,15 +370,17 @@
 			param.numTweets = 0;
 		}
 
-		if(param.category.length == 0){
-			param.category = "*";
+		if(param.category){
+			if(param.category.length == 0){
+				param.category = "*";
+			}
 		}
 
 		$.get('/tweets', { category: param.category, search: param.query, screen_name: param.screen_name, start: param.numTweets }, function(tweets){
 			var length = tweets.length;
 
 			for(var i = 0; i <length; i++){
-				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url, new Date(tweets[i].created_at).toLocaleString()));
+				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url, new Date(tweets[i].created_at).toLocaleString(), tweets[i].screen_name));
 				param.numTweets++;
 			}
 

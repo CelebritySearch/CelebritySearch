@@ -1,5 +1,10 @@
 body{
-
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 #index h1{
@@ -113,6 +118,10 @@ body{
 	overflow: auto;
 }
 
+.promi-section{
+
+}
+
 .well .container{
 	background-color: rgba(255,255,255,0.6);
 	height: 660px;
@@ -158,6 +167,15 @@ body{
 	width: 597px;
 }
 
+.tweet-text{
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
 .tweet-time{
 	float: right;
 }
@@ -165,6 +183,8 @@ body{
 .celebrity-name{
 	font-weight: bold;
 	font-size: 20px;
+	color: #00ACEE;
+	cursor: pointer;
 }
 
 #facetted-search{

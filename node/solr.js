@@ -220,6 +220,7 @@ var addTweet = function(data){
 var getTweets = function(params, callback){
 	var query = buildQuery(tweetClient, {
 		words: params.screen_name,
+		search: params.search,
 		field: "screen_name",
 		start: params.start,
 		rows: params.rows
@@ -244,6 +245,7 @@ var getCategoryTweets = function(params, callback){
 		var query = buildQuery(tweetClient, {
 			words: screen_names,
 			field: "screen_name",
+			search: params.search,
 			start: params.start,
 			rows: params.rows,
 			sort: {created_at: "desc"}
@@ -283,10 +285,19 @@ var search = function(query, callback){
 	});
 };
 
+var extractScreenNames = function(data){
+	var screen_names = [];
+	for(var i = 0; i < data.length; i++){
+		screen_names.push(data[i].screen_name);
+	}
+	return screen_names;
+};
+
 // get celebrity data by sreen_name
 var getCeleb = function(params, callback){
 	var query = buildQuery(celebClient, {
 		words: params.screen_name,
+		search: params.search,
 		field: "screen_name",
 		start: params.start,
 		rows: params.rows
@@ -306,16 +317,16 @@ var getCategoryCelebs = function(params, callback){
 	var query = buildQuery(celebClient, {
 		words: params.category,
 		field: "categories",
+		search: params.search,
 		start: params.start,
 		rows: params.rows,
-		sort: {screen_name: "asc"}
+		sort: {name: "asc"}
 	});
 
 	celebClient.search(query, function(err, obj){
 		if(err){
 			console.log(err);
 		} else {
-			console.log("Found celebs");
 			callback(obj.response.docs);
 		}
 	});
@@ -339,15 +350,21 @@ var buildQuery = function(client, params){
 		querystring = querystring+ params.field + ":" + params.words[i];
 	}
 
+	if(params.search){
+		if(querystring != ''){
+			querystring = "(" + querystring + ") AND " + params.search;
+		} else {
+			querystring = params.search;
+		}
+	}
+
 	var rows = params.rows || 25;
 	var start = params.start || 0;
 	var query = client.createQuery().q(querystring).start(start).rows(rows);
 
 	if(params.sort){
-		console.log(params.sort);
 		query.sort(params.sort);
 	}
-	console.log(util.inspect(query));
 
 	return query;
 };

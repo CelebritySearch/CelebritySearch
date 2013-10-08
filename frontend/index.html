@@ -27,11 +27,11 @@
 
 			    <div class="tabbable"> <!-- Only required for left/right tabs -->
 				    <ul class="nav nav-tabs">
-					    <li id="tab-promis" class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user"></i> Promis</a></li>
-					    <li id="tab-tweets" ><a href="#tab2" data-toggle="tab"><i class="icon-list"></i> Tweets</a></li>
+					    <li id="tab-promis"><a href="#tab1" data-toggle="tab"><i class="icon-user"></i> Promis</a></li>
+					    <li id="tab-tweets" class="active"><a href="#tab2" data-toggle="tab"><i class="icon-list"></i> Tweets</a></li>
 				    </ul>
 				    <div class="tab-content">
-					    <div id="section-promis" class="tab-pane active" id="tab1">
+					    <div id="section-promis" class="tab-pane" id="tab1">
 					    	<div class="row" id="promi-section">
 						    	<!--<div class="span4">
 						    		<ul class="thumbnails text-center celebrity-section" id="celebrity-one">
@@ -60,7 +60,7 @@
 								</div>-->
 							</div>
 					    </div>
-					    <div id="section-tweets" class="tab-pane" id="tab2">
+					    <div id="section-tweets" class="tab-pane active" id="tab2">
 					    <!-- 
 					    	<div class="tweet" id="section-tweet1">
 					    		<img src="img/schauspieler.png" class="tweet-pic">
@@ -187,7 +187,7 @@
      	<li>
 		  	<a href="#">
 		  	<label class="checkbox">
-	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchriftsteller">Schriftsteller</label>
+	      		<input type="checkbox" class="optionsFacettedSearch" id="optionSchriftsteller">Autoren</label>
 	    	</a>
      	</li>
      	<li>
@@ -209,28 +209,30 @@
 	
 
 	<script src="libs/jquery-1.9.1.min.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
+	<script src="libs/underscore-min.js"></script>
 	<script type="text/javascript">
-	var category = '';
+	var categories = [];
+	
 	$(".category-thumbnail").on("click", function(event){
-	 	category = $(this).attr("id");
-		fillPromiSection(category);
-		testCategoryTweets(category);
+		var category = $(this).attr("id");
+		categories = [];
+	 	categories.push(category);
+
+	 	var query = $('#inputSearch').val();
+
+		fillPromiSection({category: categories, query: query});
+		fillTweetSection({category: categories, query: query});
 
 	 	$("#detailansicht").fadeIn(300);
 	 	document.getElementById("ueberschrift").innerHTML = category;
 	 	$("#facetted-search").fadeIn(300);
-	 	console.log("clicked", category);
 	 	$(".optionsFacettedSearch").prop("checked", false);
 	 	$("#option" + category).prop("checked", true);
-	 	//$("#detailansicht").css("visibility", "visible");
 	});
 
 	$("#close-button").on("click", function(event){
-
 	 	$("#detailansicht").fadeOut(300);
 	 	$("#facetted-search").fadeOut(300);
-	 	//$("#detailansicht").css("visibility", "hidden");
 	});
 
 	$("#search-button").on("click", function(event){
@@ -238,38 +240,49 @@
 	 	$("#detailansicht").fadeIn(300);
 	 	$("#tab-tweets").addClass("active");
 	 	$("#section-tweets").addClass("active");
-	 	search($(inputSearch).val());
+
+	 	fillTweetSection({category: categories, query: $('#inputSearch').val()});
 	 	$("#tab-promis").removeClass("active");
 	 	$("#section-promis").removeClass("active");
+	 	$("#facetted-search").fadeIn(300);
 	});
 
 	$("#tab-promis").on("click", function(event){
 	 	$("#tab-tweets").removeClass("active");
 	 	$("#section-tweets").removeClass("active");
-	 	// fillPromiSection(category);
 	 	$("#section-promis").addClass("active");
+	 	$("#tab-promis").addClass("active");
 	});
  	
  	$("#tab-tweets").on("click", function(event){
 	 	$("#tab-tweets").addClass("active");
 	 	$("#section-tweets").addClass("active");
-	 	// testCategoryTweets(category);
-	 	// fillTweetView(category);
 	 	$("#tab-promis").removeClass("active");
 	 	$("#section-promis").removeClass("active");
 	});
+	
 
 	$(".checkbox").on("click", function(event){
-		var categories = [];
 		var checkboxEls = $("#facetted-search").find(".checkbox");
 		for(var i = 0; i<checkboxEls.length; i++){
 			var checkbox = $(checkboxEls[i]).find(".optionsFacettedSearch");
-				if($(checkbox).prop("checked") == true){
-				categories.push(($(checkboxEls[i]).text().replace(/[\n|\s|\r|\t]*/,"")));
+			var category = ($(checkboxEls[i]).text().replace(/[\n|\s|\r|\t]*/,""));
+			if($(checkbox).prop("checked") == true){
+				if(categories.indexOf(category) == -1){
+					categories.push(category);
+				}
+			} else {
+				categories = _.without(categories, category);
 			}
 		}
-		testCategoryTweets(categories);
-		fillPromiSection(categories);
+
+		var query = null;
+		if($("#inputSearch").val() != ''){
+			query = $('#inputSearch').val();
+		}
+
+		fillTweetSection({category: categories, query: query});
+		fillPromiSection({category: categories, query: query});
 		if(categories.length == 1){
 			document.getElementById("ueberschrift").innerHTML = categories[0];
 		}
@@ -280,7 +293,6 @@
 	});
 
 	function search(query){
-		console.log(query);
 		var $tweetSection = $('#section-tweets');
 		var $promiSection = $('#section-promis');
 		$tweetSection.empty();
@@ -292,40 +304,11 @@
 			}
 
 			for(var i = 0; i < data.celebs.length; i++){
-				$promiSection.append(createPromiView(data.celebs[i].name, data.celebs[i].profile_image_url));
+				$promiSection.append(createPromiView(data.celebs[i].name, data.celebs[i].profile_image_url, data.celebs[i].screen_name));
 			}
 		});
 	};
 
-	function testCategoryTweets(category){
-		var $tweetSection = $('#section-tweets');
-		$tweetSection.empty();
-
-		$.get('/tweets', { category: category }, function(tweets){
-			var length = tweets.length;
-
-			var numTweets = 0;
-			for(var i = 0; i <length; i++){
-				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
-			}
-
-			if(numTweets == 0){
-				$tweetSection.append("<p>Keine Ergebnisse gefunden!<p>");
-			}
-			
-			if(numTweets == 20){
-
-				var buttonMore = createButtonMore();
-				$tweetSection.append(buttonMore);
-
-				$(buttonMore).on("click", function(){
-					createMoreTweetViews(category, numTweets, $tweetSection);	
-				});
-
-			}	
-		});
-	};
-	
 	function createTweetView(name, text, profile_image_url){
 		var view = $('<div class="tweet"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
 		$(view.find('.tweet-pic')[0]).attr("src", profile_image_url);
@@ -335,81 +318,89 @@
 		return view;
 	};
 
-	function createPromiView(name, profile_image_url){
+	function createPromiView(name, profile_image_url, screen_name){
 		var view = $('<div class="span4"><ul class="thumbnails text-center celebrity-section"><div class="thumbnail celebrity-thumbnail"><h4 class="promi-name">Promi 1</h4><img src="img/schauspieler.png" class="img-rounded promi-pic" ></div></ul></div>');
 		$(view.find('.promi-pic')[0]).attr("src", profile_image_url);
 		$(view.find('.promi-name')[0]).text(name);
+		view.on('click', function(event){
+
+			$("#tab-tweets").addClass("active");
+			$("#section-tweets").addClass("active");
+			$("#tab-promis").removeClass("active");
+			$("#section-promis").removeClass("active");
+
+			fillTweetSection({screen_name: screen_name});
+		});
 
 		return view;
 	};
 
-	function fillPromiSection(category){
+	function fillPromiSection(param){
+		deleteButtonMore();
 		var $promiSection = $("#promi-section");
-		$promiSection.empty();
+		if(!param.numPromis){
+			$promiSection.empty();
+			param.numPromis = 0;
+		}
 
-		$.get('/celeb', {category: category}, function(celebs){
+		$.get('/celeb', {category: param.category, search: param.query, start: param.numPromis, screen_name: param.screen_name}, function(celebs){
 			var length = celebs.length;
 
-			var numPromis = 0;
 			for(var i = 0; i<length; i++){
-				$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));
-				numPromis++;
+				$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url, celebs[i].screen_name));
+				param.numPromis++;
 			}
 
-			if(numPromis == 0){
+			if(celebs.length == 0){
 				$promiSection.append("<p>Keine Ergebnisse gefunden!<p>");
 			}
 			
-			if(numPromis > 24){
-
+			if(celebs.length > 24){
 				var buttonMore = createButtonMore();
 				$promiSection.append(buttonMore);
 
 				$(buttonMore).on("click", function(){
-					createMorePromiViews(category, numPromis, $promiSection);	
+					fillPromiSection({
+						category: param.category,
+						query: param.query,
+						screen_name: screen_name,
+						numPromis: param.numPromis,
+					});
 				});
-
 			}
 		});
 	};
 
-	function createMorePromiViews(category, numPromis, $promiSection){
-			deleteButtonMore();
-			$.get('/celeb', {category: category, start: numPromis}, function(celebs){
-				var length = celebs.length;
+	function fillTweetSection(param){
+		var $tweetSection = $('#section-tweets');
+		if(!param.numTweets){
+			$tweetSection.empty();
+			param.numTweets = 0;
+		}
 
-				for(var i = 0; i<length; i++){
-					$promiSection.append(createPromiView(celebs[i].name, celebs[i].profile_image_url));
-					numPromis++;
-				};
+		$.get('/tweets', { category: param.category, search: param.query, screen_name: param.screen_name, start: param.numTweets }, function(tweets){
+			var length = tweets.length;
 
-				var buttonMore = createButtonMore();
-				$promiSection.append(buttonMore);
+			for(var i = 0; i <length; i++){
+				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
+				param.numTweets++;
+			}
 
-				$(buttonMore).on("click", function(){
-					createMorePromiViews(category, numPromis, $promiSection);	
-				});
-			});
-	};
-
-	function createMoreTweetViews(category, numTweets, $tweetSection){
-			deleteButtonMore();
-			$.get('/celeb', {category: category, start: numTweets}, function(tweets){
-				var length = tweets.length;
-
-				for(var i = 0; i<length; i++){
-					$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
-					numTweets++;
-				};
-
+			if(tweets.length == 0){
+				$tweetSection.append("<p>Keine Ergebnisse gefunden!<p>");
+			}
+			
+			if(tweets.length > 24){
 				var buttonMore = createButtonMore();
 				$tweetSection.append(buttonMore);
 
 				$(buttonMore).on("click", function(){
-					createMoreTweetViews(category, numTweets, $tweetSection);	
+					$(buttonMore).remove();
+					fillTweetSection({category: param.category, search: param.query, screen_name: param.screen_name, numTweets: param.numTweets});	
 				});
-			});
-	};
+			}	
+		});
+	}
 
 	function createButtonMore(){
 		var button = $('<button class="btn" id="button-more" type="button">Mehr</button>');
@@ -419,16 +410,6 @@
 	function deleteButtonMore(){
 		$("#button-more").remove();
 	};
-
- 	var socket = io.connect('http://localhost');
-
- 	socket.on('tweet', function(tweet){
- 		console.log(tweet);
- 	});
-
- 	/*$.get("/search", {text: "zachbraff"}, function(data){
- 		console.log(data);
- 	});*/
 
  	function openCelebStream(screen_name){
  		$.get('/celeb', { screen_name: screen_name }, function(data){

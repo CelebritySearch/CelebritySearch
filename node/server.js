@@ -60,6 +60,7 @@ app.get("/tweets", function(req, res){
 	params.search = req.query.search || null;
 
 	if(req.query.category){
+		console.log(util.inspect(req.query.category));
 		params.category = req.query.category;
 		solr.getCategoryTweets(params, function(tweets){
 			res.send(tweets);

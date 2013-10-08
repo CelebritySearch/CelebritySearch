@@ -236,25 +236,15 @@ var getTweets = function(params, callback){
 };
 
 var getCategoryTweets = function(params, callback){
-	if(!params.category){
-		params.category = "*";
-	}
-
-	getCategoryCelebs({category: params.category, rows: 100}, function(celebs){
-		var screen_names = [];
-		for(var i = 0; i < celebs.length; i++){
-			screen_names.push(celebs[i].screen_name);
-		}
-
+	if(params.category == '*'){
 		var query = buildQuery(tweetClient, {
-			words: screen_names,
+			words: '*',
 			field: "screen_name",
 			search: params.search,
 			start: params.start,
 			rows: params.rows,
 			sort: {created_at: "desc"}
 		});
-
 		tweetClient.search(query, function(err, obj){
 			if(err){
 				console.log(err);
@@ -262,7 +252,32 @@ var getCategoryTweets = function(params, callback){
 				callback(obj.response.docs);
 			}
 		});
-	});
+	} else {
+		getCategoryCelebs({category: params.category, rows: 300}, function(celebs){
+			var screen_names = [];
+			for(var i = 0; i < celebs.length; i++){
+				screen_names.push(celebs[i].screen_name);
+			}
+
+			var query = buildQuery(tweetClient, {
+				words: screen_names,
+				field: "screen_name",
+				search: params.search,
+				start: params.start,
+				rows: params.rows,
+				sort: {created_at: "desc"}
+			});
+
+			tweetClient.search(query, function(err, obj){
+				if(err){
+					console.log(err);
+				} else {
+					callback(obj.response.docs);
+				}
+			});
+		});	
+	}
+	
 };
 
 // search solr server with query passed

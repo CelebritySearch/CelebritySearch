@@ -242,6 +242,8 @@
 	 	$("#section-tweets").addClass("active");
 
 	 	fillTweetSection({category: categories, query: $('#inputSearch').val()});
+	 	fillPromiSection({category: categories, query: $('#inputSearch').val()});
+
 	 	$("#tab-promis").removeClass("active");
 	 	$("#section-promis").removeClass("active");
 	 	$("#facetted-search").fadeIn(300);
@@ -312,8 +314,9 @@
 		});
 	};
 
-	function createTweetView(name, text, profile_image_url){
-		var view = $('<div class="tweet"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
+	function createTweetView(name, text, profile_image_url, time){
+		var view = $('<div class="tweet"><img src="img/schauspieler.png" class="tweet-pic"><div class="tweet-data"><div class="tweet-time"></div><p class="celebrity-name">Promi Name</p><p class="tweet-text">blbalablabl</p></div></div>');
+		$(view.find('.tweet-time')[0]).text(time);
 		$(view.find('.tweet-pic')[0]).attr("src", profile_image_url);
 		$(view.find('.celebrity-name')[0]).text(name);
 		$(view.find('.tweet-text')[0]).text(text);
@@ -370,7 +373,7 @@
 					fillPromiSection({
 						category: param.category,
 						query: param.query,
-						screen_name: screen_name,
+						screen_name: param.fscreen_name,
 						numPromis: param.numPromis,
 					});
 				});
@@ -393,7 +396,7 @@
 			var length = tweets.length;
 
 			for(var i = 0; i <length; i++){
-				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url));
+				$tweetSection.append(createTweetView(tweets[i].user_name, tweets[i].text, tweets[i].profile_image_url, new Date(tweets[i].created_at).toLocaleString()));
 				param.numTweets++;
 			}
 

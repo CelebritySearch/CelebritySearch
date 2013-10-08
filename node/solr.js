@@ -236,6 +236,10 @@ var getTweets = function(params, callback){
 };
 
 var getCategoryTweets = function(params, callback){
+	if(!params.category){
+		params.category = "*";
+	}
+
 	getCategoryCelebs({category: params.category, rows: 100}, function(celebs){
 		var screen_names = [];
 		for(var i = 0; i < celebs.length; i++){
@@ -314,6 +318,10 @@ var getCeleb = function(params, callback){
 
 // get celebrity data by categories
 var getCategoryCelebs = function(params, callback){
+	if(!params.category){
+		params.category = "*";
+	}
+
 	var query = buildQuery(celebClient, {
 		words: params.category,
 		field: "categories",
@@ -337,6 +345,9 @@ var parseTwitterDate = function(date){
 };
 
 var buildQuery = function(client, params){
+	if(params.words == '' || params.words == null || params.words.length == 0){
+		params.words = "*";
+	}
 	if(params.words.constructor != Array){
 		params.words = [params.words+''];
 	}

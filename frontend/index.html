@@ -286,9 +286,12 @@
 		if(categories.length == 1){
 			document.getElementById("ueberschrift").innerHTML = categories[0];
 		}
-		else{
-			document.getElementById("ueberschrift").innerHTML = "Kategorisierte Suche";	
+		else if(categories.length == 0){
+			document.getElementById("ueberschrift").innerHTML = "Alle Kategorien";		
+		} else {
+			document.getElementById("ueberschrift").innerHTML = "Kategorisierte Suche";		
 		}
+		
 		
 	});
 
@@ -343,6 +346,10 @@
 			param.numPromis = 0;
 		}
 
+		if(param.category.length == 0){
+			param.category = "*";
+		}
+
 		$.get('/celeb', {category: param.category, search: param.query, start: param.numPromis, screen_name: param.screen_name}, function(celebs){
 			var length = celebs.length;
 
@@ -376,6 +383,10 @@
 		if(!param.numTweets){
 			$tweetSection.empty();
 			param.numTweets = 0;
+		}
+
+		if(param.category.length == 0){
+			param.category = "*";
 		}
 
 		$.get('/tweets', { category: param.category, search: param.query, screen_name: param.screen_name, start: param.numTweets }, function(tweets){

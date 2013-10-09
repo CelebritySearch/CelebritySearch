@@ -5,26 +5,34 @@ body{
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	background:-moz-linear-gradient(bottom, #00ACEE, white); /* Firefox */
+	background:-webkit-linear-gradient(bottom, #00ACEE, white); /* Safari, Chrome */
+	background:-o-linear-gradient(bottom, #00ACEE, white); /* Opera */
+	background:-ms-linear-gradient(bottom, #00ACEE, white); /* IE */
+	background:linear-gradient(bottom, #00ACEE, white); /* W3C Standard */
+
 }
 
 #index h1{
 	color: #00ACEE;
-	font-family: Valken;
+	font-family: Sniglet;
 	font-size: 45px;
 	font-weight: normal;
 }
 
 #index h3{
 	color: #00ACEE;
-	font-family: Valken;
+	font-family: Sniglet;
 	font-size: 25px;
 	text-align: center;
 }
 
 #wrapper{
-	background-color: #A9F5F2;
+	background-color: rgba(0,0,0,0);
 	min-height: 100%;
 	min-width: 1024px;
+
+	border: 0px !important;
 
 	width: 100%;
 	height: auto;
@@ -135,13 +143,7 @@ body{
 	width: 220px;
 }
 
-#wrapper{
-	background:-moz-linear-gradient(bottom, #00ACEE, white); /* Firefox */
-	background:-webkit-linear-gradient(bottom, #00ACEE, white); /* Safari, Chrome */
-	background:-o-linear-gradient(bottom, #00ACEE, white); /* Opera */
-	background:-ms-linear-gradient(bottom, #00ACEE, white); /* IE */
-	background:linear-gradient(bottom, #00ACEE, white); /* W3C Standard */
-}
+
 
 
 .tweet{

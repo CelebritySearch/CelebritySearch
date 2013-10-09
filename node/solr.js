@@ -166,8 +166,6 @@ var addCeleb = function(screen_name, categories){
 var addCelebTweets = function(startWith){
 	readScreenNamesFromFile(__dirname + '../../frontend/listen.txt', startWith, function(celebs){
 
-		console.log(util.inspect(celebs));
-
 		for(var i = 0; i < celebs.length; i++){
 		 	addUserTimeline(celebs[i], 100);
 		}
@@ -368,6 +366,7 @@ var buildQuery = function(client, params){
 	}
 
 	var querystring = '';
+	var screenNameFilter = '';
 	for(var i = 0; i < params.words.length; i++){
 		if(i > 0){
 			querystring = querystring+ " OR ";
@@ -378,7 +377,29 @@ var buildQuery = function(client, params){
 
 	if(params.search){
 		if(querystring != ''){
-			querystring = "(" + querystring + ") AND " + params.search;
+			var tokens = params.search.split(" ");
+			var remainingTokens = [];
+
+			for(var i = 0; i < tokens.length; i++){
+				if(tokens[i].charAt(0) == '@'){
+					if(screenNameFilter == ''){
+						screenNameFilter += tokens[i].substring(1, tokens[i].length);
+					} else {
+						screenNameFilter += " OR " + tokens[i].substring(1, tokens[i].length);
+					}
+				} else {
+					remainingTokens.push(tokens[i]);
+				}
+			}
+			if(screenNameFilter.length > 0){
+				screenNameFilter = "(" + screenNameFilter + ")";
+			}
+
+			remainingTokens = remainingTokens.join(" ");
+
+			if(remainingTokens){
+				querystring = "(" + querystring + ") AND text:" + remainingTokens;
+			}
 		} else {
 			querystring = params.search;
 		}
@@ -390,6 +411,9 @@ var buildQuery = function(client, params){
 
 	if(params.sort){
 		query.sort(params.sort);
+	}
+	if(screenNameFilter != ''){
+		query.matchFilter("screen_name", screenNameFilter);
 	}
 
 	return query;

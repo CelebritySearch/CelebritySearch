@@ -219,11 +219,12 @@ body{
 	font-size: 16px;
 }
 
-
-
-
-
-
-
-
-
+.promi-screen_name, .promi-name {
+	margin-top: 5px;
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}

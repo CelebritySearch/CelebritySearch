@@ -272,9 +272,8 @@
         is added to the index.  It's used either to index the same field differently,
         or to add multiple fields to the same field for easier/faster searching.  -->
 
-   <copyField source="name" dest="text"/>
-
    <!-- Text fields from SolrCell to search by default in our catch-all field -->
+   <copyField source="name" dest="text"/>
    <copyField source="location" dest="text"/>
 
    <!-- Create a string version of author for faceting -->

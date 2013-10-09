@@ -229,6 +229,7 @@
 	});
 
 	$("#close-button").on("click", function(event){
+		categories = [];
 	 	$("#detailansicht").fadeOut(300);
 	 	$("#facetted-search").fadeOut(300);
 	});
@@ -307,9 +308,10 @@
 	};
 
 	function createPromiView(name, profile_image_url, screen_name){
-		var view = $('<div class="span4"><ul class="thumbnails text-center celebrity-section"><div class="thumbnail celebrity-thumbnail"><h4 class="promi-name">Promi 1</h4><img src="img/schauspieler.png" class="img-rounded promi-pic" ></div></ul></div>');
+		var view = $('<div class="span4"><ul class="thumbnails text-center celebrity-section"><div class="thumbnail celebrity-thumbnail"><h4 class="promi-name">Promi 1</h4><img src="img/schauspieler.png" class="img-rounded promi-pic" ><p class="promi-screen_name"></p></div></ul></div>');
 		$(view.find('.promi-pic')[0]).attr("src", profile_image_url);
 		$(view.find('.promi-name')[0]).text(name);
+		$(view.find('.promi-screen_name')[0]).text('@'+screen_name);
 		view.on('click', function(event){
 
 			$("#tab-tweets").addClass("active");

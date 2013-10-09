@@ -109,7 +109,6 @@
    <field name="user_name" type="string" indexed="true" stored="true" required="true" />
    <field name="screen_name" type="string" indexed="true" stored="true" required="true" />
    <field name="profile_image_url" type="string" stored="true"></field>
-   <!-- <field name="text" type="text_general" indexed="true" stored="true" required="true" /> -->
 
    <!-- field names should consist of alphanumeric or underscore characters only and
       not start with a digit.  This is not currently strictly enforced,

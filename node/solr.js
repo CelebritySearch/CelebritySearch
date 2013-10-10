@@ -405,6 +405,8 @@ var buildQuery = function(client, params){
 		}
 	}
 
+	console.log(querystring.length);
+
 	var rows = params.rows || 25;
 	var start = params.start || 0;
 	var query = client.createQuery().q(querystring).start(start).rows(rows);

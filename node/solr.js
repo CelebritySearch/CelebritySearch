@@ -165,10 +165,13 @@ var addCeleb = function(screen_name, categories){
 
 var addCelebTweets = function(startWith){
 	readScreenNamesFromFile(__dirname + '../../frontend/listen.txt', startWith, function(celebs){
-
-		for(var i = 0; i < celebs.length; i++){
-		 	addUserTimeline(celebs[i], 100);
-		}
+		var counter = 0;
+		_und.each(celebs, function(screenName){
+			counter++;
+			setTimeout(function(){
+				addUserTimeline(screenName, 100);
+			}, counter* TIME_BETWEEN_TWITTER_API_CALLS);
+		});
 	});
 };
 
@@ -194,6 +197,15 @@ var addTweet = function(data){
 		var date = data.created_at;
 	}
 
+	var hashtags = [];
+	if(data.entities.hashtags.length != 0){
+		for(var i = 0; i < data.entities.hashtags.length; i++){
+			hashtags.push(data.entities.hashtags[i].text);
+		}
+	}
+
+	console.log(hashtags);
+
 	var tweet = {
 		created_at: date,
 		id: data.id_str,
@@ -203,7 +215,8 @@ var addTweet = function(data){
 		user_name: data.user.name,
 		screen_name: data.user.screen_name,
 		profile_image_url: data.user.profile_image_url,
-		text: data.text
+		text: data.text,
+		hashtags: hashtags
 	};
 
 	tweetClient.add(tweet, function(err, obj){
@@ -358,6 +371,7 @@ var parseTwitterDate = function(date){
 };
 
 var buildQuery = function(client, params){
+	console.log(util.inspect(params));
 	if(params.words == '' || params.words == null || params.words.length == 0){
 		params.words = "*";
 	}
@@ -367,6 +381,7 @@ var buildQuery = function(client, params){
 
 	var querystring = '';
 	var screenNameFilter = '';
+	var hashtagFilter = '';
 	for(var i = 0; i < params.words.length; i++){
 		if(i > 0){
 			querystring = querystring+ " OR ";
@@ -387,12 +402,21 @@ var buildQuery = function(client, params){
 					} else {
 						screenNameFilter += " OR " + tokens[i].substring(1, tokens[i].length);
 					}
+				} else if(tokens[i].charAt(0) == '#'){
+					if(hashtagFilter == ''){
+						hashtagFilter += tokens[i].substring(1, tokens[i].length);
+					} else {
+						hashtagFilter += " OR " + tokens[i].substring(1, tokens[i].length);
+					}
 				} else {
 					remainingTokens.push(tokens[i]);
 				}
 			}
 			if(screenNameFilter.length > 0){
 				screenNameFilter = "(" + screenNameFilter + ")";
+			}
+			if(hashtagFilter.length > 0){
+				hashtagFilter = "(" + hashtagFilter + ")";
 			}
 
 			remainingTokens = remainingTokens.join(" ");
@@ -405,8 +429,6 @@ var buildQuery = function(client, params){
 		}
 	}
 
-	console.log(querystring.length);
-
 	var rows = params.rows || 25;
 	var start = params.start || 0;
 	var query = client.createQuery().q(querystring).start(start).rows(rows);
@@ -416,6 +438,9 @@ var buildQuery = function(client, params){
 	}
 	if(screenNameFilter != ''){
 		query.matchFilter("screen_name", screenNameFilter);
+	}
+	if(hashtagFilter != ''){
+		query.matchFilter("hashtags", hashtagFilter);
 	}
 
 	return query;

@@ -73,11 +73,3 @@ app.get("/tweets", function(req, res){
 		res.send([]);
 	}
 });
-
-app.get("/search", function(req, res){
-	if(req.query.text){
-		solr.search(req.query.text, function(data){
-			res.send(data);
-		});	
-	}
-});
